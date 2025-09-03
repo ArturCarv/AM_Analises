@@ -4,7 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AM Análises - Consultoria em Análises Estatísticas</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="Consultoria especializada em análises estatísticas, ciência de dados e visualização. Transforme seus dados em insights valiosos para seu negócio.">
+    <meta name="keywords" content="consultoria estatística, análise de dados, ciência de dados, estatística, business intelligence, data science">
+    <meta name="author" content="AM Análises">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amanalises.com/">
+    <meta property="og:title" content="AM Análises - Consultoria em Análises Estatísticas">
+    <meta property="og:description" content="Consultoria especializada em análises estatísticas, ciência de dados e visualização. Transforme seus dados em insights valiosos.">
+    <meta property="og:image" content="https://amanalises.com/Logo/Logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://amanalises.com/">
+    <meta property="twitter:title" content="AM Análises - Consultoria em Análises Estatísticas">
+    <meta property="twitter:description" content="Consultoria especializada em análises estatísticas, ciência de dados e visualização. Transforme seus dados em insights valiosos.">
+    <meta property="twitter:image" content="https://amanalises.com/Logo/Logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/Logo.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="Logo/Logo.png" as="image">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>
     <style>
         * {
             margin: 0;
@@ -41,19 +66,18 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .logo img {
             height: 40px;
             width: auto;
-            display: block;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            object-fit: contain;
         }
 
         .nav-menu {
@@ -245,80 +269,6 @@
             gap: 2rem;
         }
 
-        /* Gallery */
-        .carousel {
-            position: relative;
-            margin-top: 1rem;
-        }
-
-        .carousel-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 2rem;
-        }
-
-        .carousel-title {
-            font-size: 1.4rem;
-            color: #2c3e50;
-            font-weight: 700;
-        }
-
-        .carousel-track {
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding: 0.5rem 0.25rem 1rem;
-            scrollbar-width: thin;
-        }
-
-        .carousel-item {
-            flex: 0 0 auto;
-            width: 320px;
-            scroll-snap-align: start;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .carousel-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 36px rgba(0,0,0,0.12);
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(0,0,0,0.55);
-            color: #fff;
-            cursor: pointer;
-            display: grid;
-            place-items: center;
-            transition: background 0.2s ease;
-        }
-
-        .carousel-btn:hover {
-            background: rgba(0,0,0,0.7);
-        }
-
-        .carousel-btn.prev { left: -8px; }
-        .carousel-btn.next { right: -8px; }
-
         .project-card {
             background: white;
             border-radius: 15px;
@@ -339,6 +289,39 @@
             justify-content: center;
             color: white;
             font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-image .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-image:hover .overlay {
+            opacity: 1;
         }
 
         .project-content {
@@ -422,6 +405,10 @@
                 font-size: 2.5rem;
             }
 
+            .hero p {
+                font-size: 1.1rem;
+            }
+
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -429,6 +416,53 @@
 
             .about-stats {
                 grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .service-card, .project-card {
+                margin: 0 0.5rem;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .logo img {
+                height: 32px;
+            }
+
+            .logo span {
+                display: none;
             }
         }
 
@@ -448,21 +482,59 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles for better accessibility */
+        input:focus, textarea:focus, button:focus {
+            outline: 2px solid #3498db;
+            outline-offset: 2px;
+        }
+
+        /* Skip link for screen readers */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
     </style>
-    <link rel="icon" href="Logo/Logo.png">
-    <meta name="description" content="Consultoria em análises estatísticas, ciência de dados e visualização de dados.">
 </head>
 <body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <div class="logo"><img src="Logo/Logo.png" alt="AM Análises"> AM Análises</div>
+            <div class="logo">
+                <img src="Logo/Logo.png" alt="AM Análises - Logo" loading="eager">
+                <span>AM Análises</span>
+            </div>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#about">Sobre</a></li>
-                    <li><a href="#exemplos">Exemplos</a></li>
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
@@ -472,7 +544,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
+        <div class="hero-content" id="main-content">
             <h1 class="fade-in">Transforme Dados em Insights</h1>
             <p class="fade-in">Consultoria especializada em análises estatísticas para impulsionar seu negócio com decisões baseadas em dados</p>
             <a href="#contact" class="cta-button fade-in">Solicitar Consultoria</a>
@@ -516,7 +588,7 @@
             <div class="about-content">
                 <div class="about-text fade-in">
                     <h3>Especialista em Estatística e Análise de Dados</h3>
-                    <p>Com mais de X anos de experiência em consultoria estatística, ajudo empresas e pesquisadores a extrair insights valiosos dos seus dados. Minha abordagem combina rigor metodológico com soluções práticas e compreensíveis.</p>
+                    <p>Com mais de 5 anos de experiência em consultoria estatística, ajudo empresas e pesquisadores a extrair insights valiosos dos seus dados. Minha abordagem combina rigor metodológico com soluções práticas e compreensíveis.</p>
                     
                     <p>Formação acadêmica sólida e experiência prática em diversos setores, desde startups até grandes corporações. Especializado em transformar dados complexos em estratégias acionáveis.</p>
                 </div>
@@ -538,81 +610,6 @@
         </div>
     </section>
 
-    <!-- Exemplos Section -->
-    <section id="exemplos" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Exemplos de Trabalhos</h2>
-
-            <div class="carousel" data-carousel>
-                <div class="carousel-header">
-                    <div class="carousel-title">BI</div>
-                </div>
-                <button class="carousel-btn prev" aria-label="Anterior">❮</button>
-                <div class="carousel-track">
-                    <div class="carousel-item fade-in"><img src="Exemplos/BI/Painel_Azul.jpeg" alt="Painel Azul"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/BI/Painel_Laranja.jpeg" alt="Painel Laranja"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/BI/WhatsApp Image 2024-10-23 at 17.01.08.jpeg" alt="Dashboard"></div>
-                </div>
-                <button class="carousel-btn next" aria-label="Próximo">❯</button>
-            </div>
-
-            <div class="carousel" data-carousel>
-                <div class="carousel-header">
-                    <div class="carousel-title">Cidades Seguras</div>
-                </div>
-                <button class="carousel-btn prev" aria-label="Anterior">❮</button>
-                <div class="carousel-track">
-                    <div class="carousel-item fade-in"><img src="Exemplos/Cidades Seguras/Cidades_Seguras_page-0008.jpg" alt="Cidades Seguras 8"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/Cidades Seguras/Cidades_Seguras_page-0012.jpg" alt="Cidades Seguras 12"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/Cidades Seguras/Cidades_Seguras_page-0017.jpg" alt="Cidades Seguras 17"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/Cidades Seguras/Cidades_Seguras_page-0019.jpg" alt="Cidades Seguras 19"></div>
-                </div>
-                <button class="carousel-btn next" aria-label="Próximo">❯</button>
-            </div>
-
-            <div class="carousel" data-carousel>
-                <div class="carousel-header">
-                    <div class="carousel-title">EM</div>
-                </div>
-                <button class="carousel-btn prev" aria-label="Anterior">❮</button>
-                <div class="carousel-track">
-                    <div class="carousel-item fade-in"><img src="Exemplos/EM/em-2.png" alt="EM 1"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/EM/em2-2.png" alt="EM 2"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/EM/em3-2.png" alt="EM 3"></div>
-                </div>
-                <button class="carousel-btn next" aria-label="Próximo">❯</button>
-            </div>
-
-            <div class="carousel" data-carousel>
-                <div class="carousel-header">
-                    <div class="carousel-title">LGPD</div>
-                </div>
-                <button class="carousel-btn prev" aria-label="Anterior">❮</button>
-                <div class="carousel-track">
-                    <div class="carousel-item fade-in"><img src="Exemplos/LGPD/1-1.jpg" alt="LGPD 1"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/LGPD/7-1.jpg" alt="LGPD 2"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/LGPD/11-1.jpg" alt="LGPD 3"></div>
-                </div>
-                <button class="carousel-btn next" aria-label="Próximo">❯</button>
-            </div>
-
-            <div class="carousel" data-carousel>
-                <div class="carousel-header">
-                    <div class="carousel-title">Paloma</div>
-                </div>
-                <button class="carousel-btn prev" aria-label="Anterior">❮</button>
-                <div class="carousel-track">
-                    <div class="carousel-item fade-in"><img src="Exemplos/Paloma/paloma_page-0017.jpg" alt="Paloma 17"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/Paloma/paloma_page-0018.jpg" alt="Paloma 18"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/Paloma/paloma_page-0019.jpg" alt="Paloma 19"></div>
-                    <div class="carousel-item fade-in"><img src="Exemplos/Paloma/PALOMA_page-0020.jpg" alt="Paloma 20"></div>
-                </div>
-                <button class="carousel-btn next" aria-label="Próximo">❯</button>
-            </div>
-
-        </div>
-    </section>
-
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
@@ -620,32 +617,41 @@
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
+                        <img src="Exemplos/BI/Painel_Azul.jpeg" alt="Dashboard de Business Intelligence" loading="lazy">
+                        <div class="overlay">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Análise de Comportamento do Consumidor</h3>
-                        <p>Estudo completo sobre padrões de compra para e-commerce, resultando em aumento de 30% nas conversões.</p>
-                        <small><strong>Técnicas:</strong> Análise de clusters, regressão logística, análise de coorte</small>
+                        <h3 class="project-title">Dashboard de Business Intelligence</h3>
+                        <p>Desenvolvimento de painéis interativos para análise de dados empresariais, proporcionando insights em tempo real para tomada de decisões estratégicas.</p>
+                        <small><strong>Técnicas:</strong> Power BI, SQL, análise de tendências, KPIs</small>
                     </div>
                 </div>
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <i class="fas fa-heartbeat"></i>
+                        <img src="Exemplos/Cidades Seguras/Cidades_Seguras_page-0008.jpg" alt="Análise de Cidades Seguras" loading="lazy">
+                        <div class="overlay">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Pesquisa Clínica - Eficácia Farmacológica</h3>
-                        <p>Análise estatística de ensaio clínico randomizado para novo medicamento, com análise de sobrevida e testes não-paramétricos.</p>
-                        <small><strong>Técnicas:</strong> Kaplan-Meier, testes t, ANOVA, análise multivariada</small>
+                        <h3 class="project-title">Análise de Cidades Seguras</h3>
+                        <p>Estudo estatístico sobre indicadores de segurança urbana, utilizando análise espacial e modelagem preditiva para identificar padrões de criminalidade.</p>
+                        <small><strong>Técnicas:</strong> Análise espacial, regressão logística, análise de clusters, GIS</small>
                     </div>
                 </div>
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <i class="fas fa-industry"></i>
+                        <img src="Exemplos/LGPD/1-1.jpg" alt="Análise de Conformidade LGPD" loading="lazy">
+                        <div class="overlay">
+                            <i class="fas fa-lock"></i>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Otimização de Processos Industriais</h3>
-                        <p>Implementação de controle estatístico de qualidade que reduziu defeitos em 45% e otimizou a produção.</p>
-                        <small><strong>Técnicas:</strong> Controle estatístico, planejamento de experimentos, Six Sigma</small>
+                        <h3 class="project-title">Análise de Conformidade LGPD</h3>
+                        <p>Auditoria estatística de processos de dados pessoais para garantir conformidade com a Lei Geral de Proteção de Dados, incluindo análise de riscos e vulnerabilidades.</p>
+                        <small><strong>Técnicas:</strong> Análise de risco, auditoria estatística, conformidade regulatória</small>
                     </div>
                 </div>
             </div>
@@ -656,24 +662,29 @@
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title fade-in" style="color: white;">Entre em Contato</h2>
-            <form class="contact-form fade-in" id="contactForm">
+            <form class="contact-form fade-in" id="contactForm" role="form" aria-label="Formulário de contato">
                 <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Nome *</label>
+                    <input type="text" id="name" name="name" required aria-describedby="name-help" autocomplete="name">
+                    <small id="name-help" class="sr-only">Digite seu nome completo</small>
                 </div>
                 <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required aria-describedby="email-help" autocomplete="email">
+                    <small id="email-help" class="sr-only">Digite um e-mail válido para contato</small>
                 </div>
                 <div class="form-group">
-                    <label for="subject">Assunto</label>
-                    <input type="text" id="subject" name="subject" required>
+                    <label for="subject">Assunto *</label>
+                    <input type="text" id="subject" name="subject" required aria-describedby="subject-help">
+                    <small id="subject-help" class="sr-only">Descreva brevemente o assunto da sua consulta</small>
                 </div>
                 <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" name="message" placeholder="Descreva seu projeto ou necessidade..." required></textarea>
+                    <label for="message">Mensagem *</label>
+                    <textarea id="message" name="message" placeholder="Descreva seu projeto ou necessidade..." required aria-describedby="message-help" rows="5"></textarea>
+                    <small id="message-help" class="sr-only">Descreva detalhadamente seu projeto ou necessidade</small>
                 </div>
-                <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                <button type="submit" class="submit-btn" aria-describedby="submit-help">Enviar Mensagem</button>
+                <small id="submit-help" class="sr-only">Clique para enviar sua mensagem</small>
             </form>
         </div>
     </section>
@@ -720,38 +731,45 @@
             observer.observe(el);
         });
 
-        // Carousel behavior
-        function initCarousels() {
-            const carousels = document.querySelectorAll('[data-carousel]');
-            carousels.forEach(carousel => {
-                const track = carousel.querySelector('.carousel-track');
-                const prev = carousel.querySelector('.carousel-btn.prev');
-                const next = carousel.querySelector('.carousel-btn.next');
-
-                const getScrollAmount = () => Math.max(track.clientWidth * 0.9, 300);
-
-                prev.addEventListener('click', () => {
-                    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-                });
-                next.addEventListener('click', () => {
-                    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-                });
-            });
-        }
-        initCarousels();
-
-        // Contact form handling
+        // Contact form handling with validation
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Get form data
             const formData = new FormData(this);
             const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
+                name: formData.get('name').trim(),
+                email: formData.get('email').trim(),
+                subject: formData.get('subject').trim(),
+                message: formData.get('message').trim()
             };
-            alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-            this.reset();
+            
+            // Basic validation
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Por favor, insira um e-mail válido.');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual backend integration)
+            setTimeout(() => {
+                alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         });
 
         // Add initial visibility to hero elements
@@ -763,5 +781,3 @@
     </script>
 </body>
 </html>
-
-
