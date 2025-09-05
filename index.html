@@ -822,11 +822,19 @@
             observer.observe(el);
         });
 
-        // Contact form handling with validation
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
+        // Contact form handling with Google Apps Script
+        const contactForm = document.getElementById('contactForm');
+        // <<<--- COLE AQUI O URL DO SEU APP DA WEB DO GOOGLE SCRIPT
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz4pzDgFfnDZ4-B1kM2K9mxTpc624ccO-aChDjOVEVBcRlmDfhy8JuXYFJ7jpP0lpRw-Q/exec'; 
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Previne o comportamento padrão do formulário
+
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+
             const formData = new FormData(this);
             const data = {
                 name: formData.get('name').trim(),
@@ -834,33 +842,28 @@
                 subject: formData.get('subject').trim(),
                 message: formData.get('message').trim()
             };
-            
-            // Basic validation
-            if (!data.name || !data.email || !data.subject || !data.message) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                alert('Por favor, insira um e-mail válido.');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with actual backend integration)
-            setTimeout(() => {
+
+            // Envia os dados para o Google Apps Script
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors', // Importante para evitar erros de CORS
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+              })
+              .then(response => {
                 alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-                this.reset();
+                this.reset(); // Limpa o formulário
+              })
+              .catch(error => {
+                console.error('Erro!', error.message);
+                alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+              })
+              .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 1500);
+              });
         });
 
         // Add initial visibility to hero elements
