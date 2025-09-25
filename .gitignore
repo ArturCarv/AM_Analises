@@ -1,0 +1,23 @@
+# Arquivos Financeiros Privados - NÃO COMMITAR
+financial-dashboard.html
+DASHBOARD_GUIDE.md
+
+# Arquivos de Backup
+*.backup
+*.bak
+
+# Arquivos Temporários
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# Arquivos do Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de Configuração Local
+config.local.json
+secrets.json
