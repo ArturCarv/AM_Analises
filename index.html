@@ -718,6 +718,124 @@
             color: #059669;
             text-align: center;
         }
+
+        /* Template and Scheduler Modals */
+        .template-grid, .scheduler-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .template-card, .scheduler-card {
+            background: #f8f9fa;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .template-card:hover, .scheduler-card:hover {
+            border-color: #1d4ed8;
+            background: #f0f4ff;
+            transform: translateY(-2px);
+        }
+
+        .template-icon, .scheduler-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-card h3, .scheduler-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-card p, .scheduler-card p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-card small, .scheduler-card small {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .scheduler-price {
+            background: #059669;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .template-info, .scheduler-info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .template-info h4, .scheduler-info h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .template-info ul, .scheduler-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .template-info li, .scheduler-info li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .template-pricing {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid #059669;
+        }
+
+        .template-pricing h4 {
+            color: #059669;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-pricing p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .scheduler-benefits {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid #1d4ed8;
+        }
+
+        .scheduler-benefits h4 {
+            color: #1d4ed8;
+            margin-bottom: 0.5rem;
+        }
+
+        .scheduler-benefits p {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .template-cta, .scheduler-cta {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -1091,23 +1209,192 @@
         }
 
         function downloadTemplates() {
-            // Criar um arquivo ZIP com templates (simulado)
-            const templates = [
-                'Template_Relatorio_Estatistico.docx',
-                'Template_Analise_Descritiva.docx',
-                'Template_Teste_Hipoteses.docx',
-                'Template_Regressao_Linear.docx'
-            ];
+            // Modal para seleção de templates
+            const templateModal = document.createElement('div');
+            templateModal.className = 'modal';
+            templateModal.style.display = 'block';
+            templateModal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                    <h2>📄 Templates de Relatórios Estatísticos</h2>
+                    <p>Selecione o template que melhor se adequa ao seu projeto:</p>
+                    
+                    <div class="template-grid">
+                        <div class="template-card" onclick="selectTemplate('tcc')">
+                            <div class="template-icon">📊</div>
+                            <h3>Template TCC</h3>
+                            <p>Estrutura completa para Trabalho de Conclusão de Curso</p>
+                            <small>Inclui: Introdução, Metodologia, Análise, Discussão</small>
+                        </div>
+                        
+                        <div class="template-card" onclick="selectTemplate('mestrado')">
+                            <div class="template-icon">🎓</div>
+                            <h3>Template Mestrado</h3>
+                            <p>Estrutura para Dissertação de Mestrado</p>
+                            <small>Inclui: Revisão bibliográfica, Metodologia avançada</small>
+                        </div>
+                        
+                        <div class="template-card" onclick="selectTemplate('doutorado')">
+                            <div class="template-icon">👨‍🎓</div>
+                            <h3>Template Doutorado</h3>
+                            <p>Estrutura para Tese de Doutorado</p>
+                            <small>Inclui: Metodologia complexa, Análises multivariadas</small>
+                        </div>
+                        
+                        <div class="template-card" onclick="selectTemplate('empresarial')">
+                            <div class="template-icon">🏢</div>
+                            <h3>Template Empresarial</h3>
+                            <p>Relatório para projetos empresariais</p>
+                            <small>Inclui: Executivo summary, KPIs, Recomendações</small>
+                        </div>
+                    </div>
+                    
+                    <div class="template-info">
+                        <h4>📋 O que você receberá:</h4>
+                        <ul>
+                            <li>✅ Estrutura completa do relatório</li>
+                            <li>✅ Exemplos de análises estatísticas</li>
+                            <li>✅ Formatação ABNT</li>
+                            <li>✅ Orientações metodológicas</li>
+                            <li>✅ Checklist de qualidade</li>
+                        </ul>
+                        
+                        <div class="template-pricing">
+                            <h4>💰 Investimento:</h4>
+                            <p><strong>R$ 50,00</strong> por template</p>
+                            <small>Ou R$ 150,00 para todos os 4 templates</small>
+                        </div>
+                    </div>
+                    
+                    <div class="template-cta">
+                        <button class="tool-button" onclick="contactForTemplate()">
+                            📞 Solicitar Template
+                        </button>
+                        <button class="tool-button" style="background: #6b7280; margin-left: 10px;" onclick="this.parentElement.parentElement.parentElement.remove()">
+                            ❌ Cancelar
+                        </button>
+                    </div>
+                </div>
+            `;
             
-            alert('Templates disponíveis:\n\n' + templates.join('\n') + '\n\nPara baixar os templates, entre em contato via WhatsApp!');
+            document.body.appendChild(templateModal);
+        }
+
+        function selectTemplate(type) {
+            const templates = {
+                'tcc': 'Template TCC - Estrutura completa para Trabalho de Conclusão de Curso',
+                'mestrado': 'Template Mestrado - Estrutura para Dissertação de Mestrado',
+                'doutorado': 'Template Doutorado - Estrutura para Tese de Doutorado',
+                'empresarial': 'Template Empresarial - Relatório para projetos empresariais'
+            };
             
-            // Redirecionar para WhatsApp
-            window.open('https://wa.me/5561998619189?text=Olá! Gostaria de receber os templates de relatórios estatísticos.', '_blank');
+            const message = `Olá! Gostaria de solicitar o ${templates[type]}. Poderia me enviar mais informações sobre o processo e valores?`;
+            window.open(`https://wa.me/5561998619189?text=${encodeURIComponent(message)}`, '_blank');
+            
+            // Fechar modal
+            document.querySelector('.modal').remove();
+        }
+
+        function contactForTemplate() {
+            const message = `Olá! Gostaria de saber mais sobre os templates de relatórios estatísticos. Poderia me enviar informações sobre os pacotes disponíveis e valores?`;
+            window.open(`https://wa.me/5561998619189?text=${encodeURIComponent(message)}`, '_blank');
+            
+            // Fechar modal
+            document.querySelector('.modal').remove();
         }
 
         function openScheduler() {
-            // Redirecionar para WhatsApp com mensagem específica
-            window.open('https://wa.me/5561998619189?text=Olá! Gostaria de agendar uma consultoria online para discutir meu projeto de pesquisa.', '_blank');
+            // Modal para agendamento
+            const schedulerModal = document.createElement('div');
+            schedulerModal.className = 'modal';
+            schedulerModal.style.display = 'block';
+            schedulerModal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                    <h2>📅 Agendar Consultoria</h2>
+                    <p>Escolha o tipo de consultoria que melhor se adequa às suas necessidades:</p>
+                    
+                    <div class="scheduler-grid">
+                        <div class="scheduler-card" onclick="scheduleConsultation('brief')">
+                            <div class="scheduler-icon">⚡</div>
+                            <h3>Consulta Rápida</h3>
+                            <p><strong>30 minutos</strong></p>
+                            <p>Discussão inicial do projeto</p>
+                            <small>• Definição do escopo<br>• Orientação metodológica<br>• Orçamento preliminar</small>
+                            <div class="scheduler-price">R$ 100</div>
+                        </div>
+                        
+                        <div class="scheduler-card" onclick="scheduleConsultation('standard')">
+                            <div class="scheduler-icon">📊</div>
+                            <h3>Consultoria Padrão</h3>
+                            <p><strong>1 hora</strong></p>
+                            <p>Análise detalhada do projeto</p>
+                            <small>• Revisão de dados<br>• Planejamento estatístico<br>• Cronograma de trabalho</small>
+                            <div class="scheduler-price">R$ 200</div>
+                        </div>
+                        
+                        <div class="scheduler-card" onclick="scheduleConsultation('premium')">
+                            <div class="scheduler-icon">🎯</div>
+                            <h3>Consultoria Premium</h3>
+                            <p><strong>2 horas</strong></p>
+                            <p>Análise completa e estratégica</p>
+                            <small>• Análise profunda dos dados<br>• Estratégia estatística<br>• Acompanhamento incluído</small>
+                            <div class="scheduler-price">R$ 400</div>
+                        </div>
+                    </div>
+                    
+                    <div class="scheduler-info">
+                        <h4>📋 O que está incluído:</h4>
+                        <ul>
+                            <li>✅ Análise do seu projeto</li>
+                            <li>✅ Orientação metodológica</li>
+                            <li>✅ Sugestões de análises</li>
+                            <li>✅ Cronograma de trabalho</li>
+                            <li>✅ Orçamento detalhado</li>
+                        </ul>
+                        
+                        <div class="scheduler-benefits">
+                            <h4>🎁 Benefícios:</h4>
+                            <p>• <strong>Desconto de 20%</strong> no projeto se contratado</p>
+                            <p>• <strong>Material gratuito</strong> sobre estatística</p>
+                            <p>• <strong>Suporte</strong> por 7 dias após a consultoria</p>
+                        </div>
+                    </div>
+                    
+                    <div class="scheduler-cta">
+                        <button class="tool-button" onclick="scheduleNow()">
+                            📞 Agendar Agora
+                        </button>
+                        <button class="tool-button" style="background: #6b7280; margin-left: 10px;" onclick="this.parentElement.parentElement.parentElement.remove()">
+                            ❌ Cancelar
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(schedulerModal);
+        }
+
+        function scheduleConsultation(type) {
+            const consultations = {
+                'brief': 'Consulta Rápida (30 min) - R$ 100',
+                'standard': 'Consultoria Padrão (1h) - R$ 200',
+                'premium': 'Consultoria Premium (2h) - R$ 400'
+            };
+            
+            const message = `Olá! Gostaria de agendar uma ${consultations[type]}. Poderia me informar sobre os horários disponíveis e como proceder com o pagamento?`;
+            window.open(`https://wa.me/5561998619189?text=${encodeURIComponent(message)}`, '_blank');
+            
+            // Fechar modal
+            document.querySelector('.modal').remove();
+        }
+
+        function scheduleNow() {
+            const message = `Olá! Gostaria de agendar uma consultoria para discutir meu projeto de pesquisa. Poderia me informar sobre os tipos de consultoria disponíveis, horários e valores?`;
+            window.open(`https://wa.me/5561998619189?text=${encodeURIComponent(message)}`, '_blank');
+            
+            // Fechar modal
+            document.querySelector('.modal').remove();
         }
 
         // Sample Size Calculator

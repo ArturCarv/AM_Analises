@@ -76,17 +76,21 @@ Edite o arquivo `index.html` e modifique:
 
 #### 1. Ferramentas Integradas
 - **Calculadora de Tamanho de Amostra**: Modal interativo para cálculo estatístico
-- **Sistema de Agendamento**: Redirecionamento para WhatsApp com mensagens personalizadas
-- **Templates de Relatórios**: Sistema de download direcionado
+- **Sistema de Agendamento Avançado**: Modal com opções de consultoria (Rápida, Padrão, Premium)
+- **Templates de Relatórios**: Modal com seleção de templates (TCC, Mestrado, Doutorado, Empresarial)
 
-#### 2. Dashboard Financeiro Privado
-- **Arquivo**: `financial-dashboard.html`
+#### 2. Dashboard Financeiro Python
+- **Arquivo**: `financial_dashboard.py`
 - **Funcionalidades**:
+  - Interface gráfica moderna com Tkinter
   - Controle de receitas e despesas
   - Projeções financeiras
   - Acompanhamento de metas
   - Exportação de dados
-- **Acesso**: Privado (não deve ser hospedado publicamente)
+  - Gráficos com Matplotlib
+- **Instalação**: `pip install -r requirements.txt`
+- **Execução**: `python financial_dashboard.py`
+- **Acesso**: Privado (arquivo local)
 
 #### 3. Documentação Completa
 - **PROJECT_BRIEF.md**: Brief completo do projeto
@@ -157,15 +161,18 @@ otimizar_imagens.bat
 ```
 Site/
 ├── index.html                    # Página principal
-├── financial-dashboard.html      # Dashboard financeiro privado
+├── financial_dashboard.py        # Dashboard financeiro Python (PRIVADO)
+├── requirements.txt              # Dependências Python
 ├── PROJECT_BRIEF.md              # Brief completo do projeto
 ├── GOALS_ROADMAP.md              # Metas e roadmap detalhado
-├── DASHBOARD_GUIDE.md            # Guia de uso do dashboard
+├── DEPLOY_GUIDE.md               # Guia de deploy no GitHub
+├── NEXT_STEPS.md                 # Próximos passos pós-deploy
 ├── optimize_images.py            # Script de otimização de imagens
 ├── otimizar_imagens.bat          # Script Windows para otimização
 ├── deploy_github.ps1             # Script de deploy para GitHub
 ├── deploy_github_simples.ps1     # Script simplificado de deploy
 ├── GUIA_GITHUB_PAGES.md          # Guia completo para GitHub Pages
+├── .gitignore                    # Arquivos ignorados pelo Git
 ├── Logo/
 │   └── Logo.png                 # Logo da empresa
 ├── Exemplos/                    # Imagens de projetos (originais)
