@@ -588,6 +588,136 @@
         .whatsapp-button i {
             font-size: 1.2rem;
         }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #059669;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(5,150,105,0.2);
+            border-top-color: #1d4ed8;
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            color: #059669;
+            margin-bottom: 1rem;
+        }
+
+        .tool-button {
+            background: #1d4ed8;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .tool-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(29, 78, 216, 0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .calculator-form {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .calculator-form label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .calculator-form input,
+        .calculator-form select {
+            padding: 10px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .calculator-form input:focus,
+        .calculator-form select:focus {
+            outline: none;
+            border-color: #1d4ed8;
+        }
+
+        .result-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border-left: 4px solid #059669;
+        }
+
+        .result-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #059669;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -607,6 +737,7 @@
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#tools">Ferramentas</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
@@ -729,6 +860,39 @@
         </div>
     </section>
 
+    <!-- Tools Section -->
+    <section id="tools" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Ferramentas Úteis</h2>
+            <div class="tools-grid">
+                <div class="tool-card fade-in">
+                    <div class="tool-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Calculadora de Tamanho de Amostra</h3>
+                    <p>Calcule o tamanho ideal da amostra para sua pesquisa com base no nível de confiança, margem de erro e tamanho da população.</p>
+                    <button class="tool-button" onclick="openSampleSizeCalculator()">Abrir Calculadora</button>
+                </div>
+                <div class="tool-card fade-in">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Templates de Relatórios</h3>
+                    <p>Baixe templates prontos para relatórios estatísticos, incluindo estrutura, formatação e exemplos de análises.</p>
+                    <button class="tool-button" onclick="downloadTemplates()">Baixar Templates</button>
+                </div>
+                <div class="tool-card fade-in">
+                    <div class="tool-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Agendar Consultoria</h3>
+                    <p>Agende uma consultoria online para discutir seu projeto e receber um orçamento personalizado.</p>
+                    <button class="tool-button" onclick="openScheduler()">Agendar Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
@@ -787,6 +951,50 @@
        aria-label="Contato via WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Sample Size Calculator Modal -->
+    <div id="calculatorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCalculator()">&times;</span>
+            <h2>Calculadora de Tamanho de Amostra</h2>
+            <p>Calcule o tamanho ideal da amostra para sua pesquisa estatística.</p>
+            
+            <form class="calculator-form" id="sampleSizeForm">
+                <div>
+                    <label for="population">Tamanho da População:</label>
+                    <input type="number" id="population" placeholder="Ex: 10000" required>
+                </div>
+                
+                <div>
+                    <label for="confidence">Nível de Confiança:</label>
+                    <select id="confidence" required>
+                        <option value="90">90%</option>
+                        <option value="95" selected>95%</option>
+                        <option value="99">99%</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="margin">Margem de Erro (%):</label>
+                    <input type="number" id="margin" step="0.1" placeholder="Ex: 5" required>
+                </div>
+                
+                <div>
+                    <label for="proportion">Proporção Esperada (%):</label>
+                    <input type="number" id="proportion" step="0.1" placeholder="Ex: 50" value="50">
+                    <small>Use 50% quando não souber a proporção esperada</small>
+                </div>
+                
+                <button type="submit" class="tool-button">Calcular</button>
+            </form>
+            
+            <div id="result" class="result-box" style="display: none;">
+                <h3>Tamanho de Amostra Necessário:</h3>
+                <div class="result-number" id="sampleSize">-</div>
+                <p id="resultExplanation"></p>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Smooth scrolling for navigation links
@@ -872,6 +1080,84 @@
                 el.classList.add('visible');
             });
         }, 500);
+
+        // Tools Functions
+        function openSampleSizeCalculator() {
+            document.getElementById('calculatorModal').style.display = 'block';
+        }
+
+        function closeCalculator() {
+            document.getElementById('calculatorModal').style.display = 'none';
+        }
+
+        function downloadTemplates() {
+            // Criar um arquivo ZIP com templates (simulado)
+            const templates = [
+                'Template_Relatorio_Estatistico.docx',
+                'Template_Analise_Descritiva.docx',
+                'Template_Teste_Hipoteses.docx',
+                'Template_Regressao_Linear.docx'
+            ];
+            
+            alert('Templates disponíveis:\n\n' + templates.join('\n') + '\n\nPara baixar os templates, entre em contato via WhatsApp!');
+            
+            // Redirecionar para WhatsApp
+            window.open('https://wa.me/5561998619189?text=Olá! Gostaria de receber os templates de relatórios estatísticos.', '_blank');
+        }
+
+        function openScheduler() {
+            // Redirecionar para WhatsApp com mensagem específica
+            window.open('https://wa.me/5561998619189?text=Olá! Gostaria de agendar uma consultoria online para discutir meu projeto de pesquisa.', '_blank');
+        }
+
+        // Sample Size Calculator
+        document.getElementById('sampleSizeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const population = parseInt(document.getElementById('population').value);
+            const confidence = parseInt(document.getElementById('confidence').value);
+            const margin = parseFloat(document.getElementById('margin').value);
+            const proportion = parseFloat(document.getElementById('proportion').value) / 100;
+            
+            // Validações
+            if (population <= 0 || margin <= 0 || margin >= 100 || proportion < 0 || proportion > 1) {
+                alert('Por favor, insira valores válidos.');
+                return;
+            }
+            
+            // Calcular tamanho da amostra
+            const zScore = confidence === 90 ? 1.645 : confidence === 95 ? 1.96 : 2.576;
+            const marginDecimal = margin / 100;
+            
+            // Fórmula para população infinita
+            let sampleSize = Math.ceil((zScore * zScore * proportion * (1 - proportion)) / (marginDecimal * marginDecimal));
+            
+            // Correção para população finita
+            if (population < sampleSize) {
+                sampleSize = population;
+            } else if (population < 100000) {
+                sampleSize = Math.ceil(sampleSize / (1 + (sampleSize - 1) / population));
+            }
+            
+            // Exibir resultado
+            document.getElementById('sampleSize').textContent = sampleSize.toLocaleString('pt-BR');
+            document.getElementById('resultExplanation').innerHTML = `
+                <strong>Interpretação:</strong><br>
+                • Para uma população de ${population.toLocaleString('pt-BR')} pessoas<br>
+                • Com ${confidence}% de confiança<br>
+                • E margem de erro de ${margin}%<br>
+                • Você precisa de uma amostra de <strong>${sampleSize.toLocaleString('pt-BR')} pessoas</strong>
+            `;
+            document.getElementById('result').style.display = 'block';
+        });
+
+        // Fechar modal ao clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('calculatorModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>

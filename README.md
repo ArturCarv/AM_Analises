@@ -11,6 +11,10 @@ Site profissional para consultoria em análises estatísticas, desenvolvido com 
 - **SEO Otimizado**: Meta tags completas e estrutura semântica
 - **Performance**: Carregamento rápido e otimizado
 - **Formulário Inteligente**: Validação em tempo real e feedback visual
+- **Ferramentas Integradas**: Calculadora de tamanho de amostra
+- **Sistema de Agendamento**: Integração com WhatsApp
+- **Templates de Relatórios**: Downloads direcionados
+- **Dashboard Financeiro**: Controle privado de receitas e metas
 
 ## 🚀 Como Publicar
 
@@ -67,6 +71,27 @@ Edite o arquivo `index.html` e modifique:
 - Nome da empresa (linha 470)
 - Estatísticas na seção "Sobre" (linhas 458-468)
 - Projetos realizados (linhas 479-509)
+
+### Novas Funcionalidades Implementadas
+
+#### 1. Ferramentas Integradas
+- **Calculadora de Tamanho de Amostra**: Modal interativo para cálculo estatístico
+- **Sistema de Agendamento**: Redirecionamento para WhatsApp com mensagens personalizadas
+- **Templates de Relatórios**: Sistema de download direcionado
+
+#### 2. Dashboard Financeiro Privado
+- **Arquivo**: `financial-dashboard.html`
+- **Funcionalidades**:
+  - Controle de receitas e despesas
+  - Projeções financeiras
+  - Acompanhamento de metas
+  - Exportação de dados
+- **Acesso**: Privado (não deve ser hospedado publicamente)
+
+#### 3. Documentação Completa
+- **PROJECT_BRIEF.md**: Brief completo do projeto
+- **GOALS_ROADMAP.md**: Metas e roadmap detalhado
+- **DASHBOARD_GUIDE.md**: Guia de uso do dashboard financeiro
 
 ### Adicionar Backend para Formulário
 
@@ -131,19 +156,26 @@ otimizar_imagens.bat
 
 ```
 Site/
-├── index.html              # Página principal
-├── optimize_images.py      # Script de otimização de imagens
-├── otimizar_imagens.bat    # Script Windows para otimização
+├── index.html                    # Página principal
+├── financial-dashboard.html      # Dashboard financeiro privado
+├── PROJECT_BRIEF.md              # Brief completo do projeto
+├── GOALS_ROADMAP.md              # Metas e roadmap detalhado
+├── DASHBOARD_GUIDE.md            # Guia de uso do dashboard
+├── optimize_images.py            # Script de otimização de imagens
+├── otimizar_imagens.bat          # Script Windows para otimização
+├── deploy_github.ps1             # Script de deploy para GitHub
+├── deploy_github_simples.ps1     # Script simplificado de deploy
+├── GUIA_GITHUB_PAGES.md          # Guia completo para GitHub Pages
 ├── Logo/
-│   └── Logo.png           # Logo da empresa
-├── Exemplos/              # Imagens de projetos (originais)
+│   └── Logo.png                 # Logo da empresa
+├── Exemplos/                    # Imagens de projetos (originais)
 │   ├── BI/
 │   ├── Cidades Seguras/
 │   ├── EM/
 │   ├── LGPD/
 │   └── Paloma/
-├── Exemplos_Optimized/    # Imagens otimizadas (geradas automaticamente)
-└── README.md              # Este arquivo
+├── Exemplos_Optimized/          # Imagens otimizadas (geradas automaticamente)
+└── README.md                    # Este arquivo
 ```
 
 ## 📞 Suporte
