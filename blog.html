@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - AM Análises | Artigos sobre Estatística e Pesquisa Acadêmica</title>
+    <meta name="description" content="Artigos, tutoriais e dicas sobre análise estatística, metodologia de pesquisa, TCC, mestrado e doutorado. Conteúdo educacional gratuito para pesquisadores.">
+    <meta name="keywords" content="blog estatística, tutoriais estatística, análise de dados, pesquisa acadêmica, metodologia científica, artigos TCC">
+    <meta name="author" content="AM Análises">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amanalises.com/blog.html">
+    <meta property="og:title" content="Blog - AM Análises | Artigos sobre Estatística">
+    <meta property="og:description" content="Artigos, tutoriais e dicas sobre análise estatística e pesquisa acadêmica.">
+    <meta property="og:image" content="https://amanalises.com/Logo/Logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/Logo.png">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Logo/Logo.png" alt="AM Análises - Logo" loading="eager">
+                <span>AM Análises</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#services">Serviços</a></li>
+                    <li><a href="index.html#about">Sobre</a></li>
+                    <li><a href="index.html#projects">Projetos</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="index.html#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="fade-in">Blog de Estatística e Pesquisa</h1>
+            <p class="fade-in">Artigos, tutoriais e dicas para sua jornada acadêmica e profissional</p>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="categories-wrapper">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-th"></i> Todos
+                </button>
+                <button class="category-btn" data-category="tutoriais">
+                    <i class="fas fa-graduation-cap"></i> Tutoriais
+                </button>
+                <button class="category-btn" data-category="metodologia">
+                    <i class="fas fa-flask"></i> Metodologia
+                </button>
+                <button class="category-btn" data-category="ferramentas">
+                    <i class="fas fa-tools"></i> Ferramentas
+                </button>
+                <button class="category-btn" data-category="dicas">
+                    <i class="fas fa-lightbulb"></i> Dicas
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- Post 1 -->
+                <article class="blog-card fade-in" data-category="tutoriais">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="Teste de Hipóteses" loading="lazy">
+                        <span class="blog-category">Tutoriais</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 Out 2025</span>
+                            <span><i class="far fa-clock"></i> 8 min</span>
+                        </div>
+                        <h2 class="blog-title">Como Escolher o Teste Estatístico Certo para sua Pesquisa</h2>
+                        <p class="blog-excerpt">Guia completo para selecionar o teste estatístico adequado de acordo com seus dados e hipóteses de pesquisa. Aprenda quando usar teste t, ANOVA, qui-quadrado e mais.</p>
+                        <a href="blog-post-1.html" class="blog-read-more">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-card fade-in" data-category="metodologia">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Tamanho de Amostra" loading="lazy">
+                        <span class="blog-category">Metodologia</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 10 Out 2025</span>
+                            <span><i class="far fa-clock"></i> 10 min</span>
+                        </div>
+                        <h2 class="blog-title">Tamanho de Amostra: Como Calcular e Por Que é Importante</h2>
+                        <p class="blog-excerpt">Entenda a importância do cálculo do tamanho de amostra na sua pesquisa e aprenda os métodos mais utilizados para diferentes tipos de estudos.</p>
+                        <a href="blog-post-2.html" class="blog-read-more">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-card fade-in" data-category="ferramentas">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800" alt="Ferramentas R e Python" loading="lazy">
+                        <span class="blog-category">Ferramentas</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 5 Out 2025</span>
+                            <span><i class="far fa-clock"></i> 12 min</span>
+                        </div>
+                        <h2 class="blog-title">R vs Python para Análise Estatística: Qual Escolher?</h2>
+                        <p class="blog-excerpt">Comparação detalhada entre R e Python para análise estatística. Descubra qual linguagem é melhor para seu tipo de projeto e nível de experiência.</p>
+                        <a href="blog-post-3.html" class="blog-read-more">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="blog-card fade-in" data-category="dicas">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800" alt="Dicas TCC" loading="lazy">
+                        <span class="blog-category">Dicas</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 1 Out 2025</span>
+                            <span><i class="far fa-clock"></i> 6 min</span>
+                        </div>
+                        <h2 class="blog-title">5 Erros Comuns em Análises Estatísticas de TCC</h2>
+                        <p class="blog-excerpt">Evite os erros mais frequentes que estudantes cometem ao realizar análises estatísticas. Dicas práticas para garantir a qualidade do seu trabalho.</p>
+                        <a href="blog-post-4.html" class="blog-read-more">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="blog-card fade-in" data-category="metodologia">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800" alt="Normalidade dos Dados" loading="lazy">
+                        <span class="blog-category">Metodologia</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 25 Set 2025</span>
+                            <span><i class="far fa-clock"></i> 9 min</span>
+                        </div>
+                        <h2 class="blog-title">Teste de Normalidade: Quando e Como Aplicar</h2>
+                        <p class="blog-excerpt">Aprenda a verificar se seus dados seguem distribuição normal e entenda quando isso é realmente necessário para sua análise estatística.</p>
+                        <a href="blog-post-5.html" class="blog-read-more">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="blog-card fade-in" data-category="tutoriais">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt="Regressão Linear" loading="lazy">
+                        <span class="blog-category">Tutoriais</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 20 Set 2025</span>
+                            <span><i class="far fa-clock"></i> 15 min</span>
+                        </div>
+                        <h2 class="blog-title">Regressão Linear Múltipla: Guia Completo para Iniciantes</h2>
+                        <p class="blog-excerpt">Tutorial passo a passo sobre regressão linear múltipla, desde os conceitos básicos até a interpretação dos resultados no contexto acadêmico.</p>
+                        <a href="blog-post-6.html" class="blog-read-more">
+                            Ler mais <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="blog-load-more">
+                <button class="load-more-btn" onclick="loadMorePosts()">
+                    <i class="fas fa-sync-alt"></i> Carregar Mais Artigos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content fade-in">
+                <div class="newsletter-text">
+                    <h2><i class="fas fa-envelope"></i> Receba Novos Artigos por E-mail</h2>
+                    <p>Cadastre-se para receber notificações sobre novos artigos, tutoriais e dicas sobre estatística e pesquisa acadêmica.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AM Análises. Todos os direitos reservados.</p>
+            <p>Consultoria Profissional em Análises Estatísticas</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5561998619189?text=Olá! Gostaria de saber mais sobre os serviços de consultoria estatística." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="blog-scripts.js"></script>
+</body>
+</html>
+

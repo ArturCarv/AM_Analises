@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Escolher o Teste Estatístico Certo | AM Análises Blog</title>
+    <meta name="description" content="Guia completo para selecionar o teste estatístico adequado de acordo com seus dados e hipóteses de pesquisa. Aprenda quando usar teste t, ANOVA, qui-quadrado e mais.">
+    <meta name="keywords" content="teste estatístico, teste t, ANOVA, qui-quadrado, análise estatística, metodologia">
+    <meta name="author" content="AM Análises">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo/Logo.png">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+    <style>
+        .post-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 2rem 60px;
+        }
+
+        .post-header {
+            margin-bottom: 3rem;
+        }
+
+        .post-category {
+            display: inline-block;
+            background: #1d4ed8;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            color: #6b7280;
+            font-size: 0.95rem;
+            padding: 1rem 0;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .post-featured-image {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 2rem 0 3rem;
+        }
+
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .post-content h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #1d4ed8;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-box {
+            background: #f0f4ff;
+            border-left: 4px solid #1d4ed8;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #1d4ed8;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        table th {
+            background: #1d4ed8;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            background: white;
+            color: #059669;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-box a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 2px solid #e5e7eb;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .share-whatsapp { background: #25d366; }
+        .share-linkedin { background: #0077b5; }
+        .share-twitter { background: #1da1f2; }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .post-container {
+                padding: 100px 1.5rem 40px;
+            }
+
+            .post-title {
+                font-size: 1.8rem;
+            }
+
+            .post-meta {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .share-buttons {
+                flex-wrap: wrap;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Logo/Logo.png" alt="AM Análises - Logo" loading="eager">
+                <span>AM Análises</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#services">Serviços</a></li>
+                    <li><a href="index.html#about">Sobre</a></li>
+                    <li><a href="index.html#projects">Projetos</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="index.html#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article class="post-container">
+        <a href="blog.html" class="back-to-blog">
+            <i class="fas fa-arrow-left"></i> Voltar para o Blog
+        </a>
+
+        <header class="post-header">
+            <span class="post-category">Tutoriais</span>
+            <h1 class="post-title">Como Escolher o Teste Estatístico Certo para sua Pesquisa</h1>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> 15 de Outubro de 2025</span>
+                <span><i class="far fa-clock"></i> 8 minutos de leitura</span>
+                <span><i class="far fa-user"></i> AM Análises</span>
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200" alt="Teste Estatístico" class="post-featured-image" loading="eager">
+
+        <div class="post-content">
+            <p>Escolher o teste estatístico adequado é uma das decisões mais importantes na análise de dados de uma pesquisa. Um teste inadequado pode levar a conclusões incorretas, comprometendo todo o trabalho. Neste guia completo, você aprenderá a selecionar o teste certo para cada situação.</p>
+
+            <h2>1. Entenda Seus Dados</h2>
+            
+            <p>Antes de escolher qualquer teste, você precisa conhecer profundamente suas variáveis. Existem dois tipos principais:</p>
+
+            <h3>Variáveis Quantitativas</h3>
+            <ul>
+                <li><strong>Contínuas:</strong> Podem assumir qualquer valor em um intervalo (ex: peso, altura, idade)</li>
+                <li><strong>Discretas:</strong> Assumem valores inteiros específicos (ex: número de filhos, contagem de eventos)</li>
+            </ul>
+
+            <h3>Variáveis Qualitativas</h3>
+            <ul>
+                <li><strong>Nominais:</strong> Categorias sem ordem (ex: sexo, cor, cidade)</li>
+                <li><strong>Ordinais:</strong> Categorias com ordem (ex: escolaridade, classe social)</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>💡 Dica Importante:</strong> A natureza das suas variáveis é o primeiro critério para escolher o teste estatístico. Anote o tipo de cada variável antes de prosseguir.</p>
+            </div>
+
+            <h2>2. Defina Seu Objetivo</h2>
+
+            <p>O que você quer descobrir com sua análise? Os objetivos mais comuns são:</p>
+
+            <ul>
+                <li><strong>Comparar grupos:</strong> Existe diferença entre os grupos?</li>
+                <li><strong>Verificar associação:</strong> As variáveis estão relacionadas?</li>
+                <li><strong>Prever valores:</strong> Posso estimar uma variável a partir de outras?</li>
+                <li><strong>Verificar dependência:</strong> Uma variável depende de outra?</li>
+            </ul>
+
+            <h2>3. Guia de Escolha de Testes</h2>
+
+            <h3>Comparação de Médias</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Situação</th>
+                            <th>Teste Recomendado</th>
+                            <th>Requisitos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Comparar 2 grupos independentes</td>
+                            <td>Teste t de Student</td>
+                            <td>Normalidade, homogeneidade de variâncias</td>
+                        </tr>
+                        <tr>
+                            <td>Comparar 2 grupos dependentes</td>
+                            <td>Teste t pareado</td>
+                            <td>Normalidade das diferenças</td>
+                        </tr>
+                        <tr>
+                            <td>Comparar 3+ grupos independentes</td>
+                            <td>ANOVA (One-Way)</td>
+                            <td>Normalidade, homogeneidade de variâncias</td>
+                        </tr>
+                        <tr>
+                            <td>Comparar 3+ grupos dependentes</td>
+                            <td>ANOVA de medidas repetidas</td>
+                            <td>Normalidade, esfericidade</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Testes Não-Paramétricos</h3>
+
+            <p>Quando seus dados não atendem aos pressupostos dos testes paramétricos (normalidade, homogeneidade), use alternativas não-paramétricas:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teste Paramétrico</th>
+                            <th>Alternativa Não-Paramétrica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Teste t independente</td>
+                            <td>Mann-Whitney (Wilcoxon)</td>
+                        </tr>
+                        <tr>
+                            <td>Teste t pareado</td>
+                            <td>Wilcoxon signed-rank</td>
+                        </tr>
+                        <tr>
+                            <td>ANOVA One-Way</td>
+                            <td>Kruskal-Wallis</td>
+                        </tr>
+                        <tr>
+                            <td>ANOVA medidas repetidas</td>
+                            <td>Friedman</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Testes de Associação</h3>
+
+            <ul>
+                <li><strong>Qui-quadrado:</strong> Associação entre variáveis categóricas</li>
+                <li><strong>Correlação de Pearson:</strong> Relação linear entre variáveis quantitativas (normalidade)</li>
+                <li><strong>Correlação de Spearman:</strong> Relação monotônica (alternativa não-paramétrica)</li>
+            </ul>
+
+            <h2>4. Verifique os Pressupostos</h2>
+
+            <p>Cada teste tem requisitos específicos. Os mais comuns são:</p>
+
+            <ul>
+                <li><strong>Normalidade:</strong> Use teste de Shapiro-Wilk ou Kolmogorov-Smirnov</li>
+                <li><strong>Homogeneidade de variâncias:</strong> Use teste de Levene</li>
+                <li><strong>Independência:</strong> Garanta que as observações sejam independentes</li>
+                <li><strong>Tamanho da amostra:</strong> Verifique se é adequado para o teste escolhido</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>⚠️ Atenção:</strong> Se seus dados não atenderem aos pressupostos, considere transformações (log, raiz quadrada) ou use testes não-paramétricos.</p>
+            </div>
+
+            <h2>5. Fluxograma de Decisão</h2>
+
+            <p>Siga este fluxograma simplificado:</p>
+
+            <ol>
+                <li><strong>Passo 1:</strong> Identifique o tipo das variáveis (quantitativa ou qualitativa)</li>
+                <li><strong>Passo 2:</strong> Defina o objetivo (comparar, associar, prever)</li>
+                <li><strong>Passo 3:</strong> Verifique o número de grupos/variáveis</li>
+                <li><strong>Passo 4:</strong> Determine se os dados são dependentes ou independentes</li>
+                <li><strong>Passo 5:</strong> Teste os pressupostos</li>
+                <li><strong>Passo 6:</strong> Escolha o teste adequado</li>
+            </ol>
+
+            <div class="cta-box">
+                <h3>📊 Precisa de Ajuda com suas Análises?</h3>
+                <p>Nossa equipe especializada pode auxiliar você na escolha e execução dos testes estatísticos mais adequados para sua pesquisa.</p>
+                <a href="index.html#contact">
+                    <i class="fas fa-envelope"></i> Solicitar Consultoria
+                </a>
+            </div>
+
+            <h2>6. Conclusão</h2>
+
+            <p>Escolher o teste estatístico correto é fundamental para a validade das suas conclusões. Lembre-se sempre de:</p>
+
+            <ul>
+                <li>Conhecer profundamente seus dados</li>
+                <li>Ter objetivos claros de pesquisa</li>
+                <li>Verificar todos os pressupostos</li>
+                <li>Consultar um especialista quando necessário</li>
+            </ul>
+
+            <p>A estatística é uma ferramenta poderosa, mas requer conhecimento e cuidado na sua aplicação. Não hesite em buscar ajuda profissional quando precisar!</p>
+
+            <!-- Share Buttons -->
+            <div class="share-buttons">
+                <p style="width: 100%; margin-bottom: 1rem; font-weight: 600; color: #2c3e50;">
+                    <i class="fas fa-share-alt"></i> Compartilhe este artigo:
+                </p>
+                <a href="https://wa.me/?text=Como%20Escolher%20o%20Teste%20Estatístico%20Certo%20-%20AM%20Análises" target="_blank" class="share-btn share-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://amanalises.com/blog-post-1.html" target="_blank" class="share-btn share-linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Como%20Escolher%20o%20Teste%20Estatístico%20Certo&url=https://amanalises.com/blog-post-1.html" target="_blank" class="share-btn share-twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content fade-in">
+                <div class="newsletter-text">
+                    <h2><i class="fas fa-envelope"></i> Receba Novos Artigos por E-mail</h2>
+                    <p>Cadastre-se para receber notificações sobre novos artigos, tutoriais e dicas sobre estatística e pesquisa acadêmica.</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AM Análises. Todos os direitos reservados.</p>
+            <p>Consultoria Profissional em Análises Estatísticas</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5561998619189?text=Olá! Li o artigo sobre testes estatísticos e gostaria de mais informações sobre consultoria." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="blog-scripts.js"></script>
+</body>
+</html>
+
