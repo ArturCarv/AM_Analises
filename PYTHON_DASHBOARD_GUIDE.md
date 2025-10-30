@@ -177,3 +177,4 @@ pip install matplotlib pandas
 **Importante**: Esta aplicação é privada e deve ser mantida segura. Os dados financeiros são sensíveis e não devem ser compartilhados.
 
 **Suporte**: Para dúvidas, entre em contato via WhatsApp: +55 61 99861-9189
+
