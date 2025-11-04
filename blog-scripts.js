@@ -183,3 +183,6 @@ function addSocialShareButtons() {
 
 console.log('📚 Blog scripts carregados com sucesso!');
 
+
+
+

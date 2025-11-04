@@ -1,202 +1,260 @@
-# 🎯 AM Análises - Metas e Roadmap Detalhado
+# 🎯 AM Análises - Metas e Roadmap para Psicologia
 
-## 📊 Metas Financeiras
+## 📊 Metas Financeiras - Foco em Psicologia
 
-### Meta Anual 2025 - Renda Extra
-**Objetivo Principal:** R$ 15.000,00 em receita anual (renda extra)
-- **Meta Mensal:** R$ 1.250,00
-- **Meta Trimestral:** R$ 3.750,00
-- **Meta Semestral:** R$ 7.500,00
+### Meta MVP (Primeiros 6 meses)
+**Objetivo Principal:** R$ 9.000,00 em receita (validar nicho)
+- **Meta Mensal:** R$ 1.500,00
+- **Clientes:** 2-4 estudantes de psicologia/mês
+- **Foco:** Construir portfólio e reputação
 
-### Estrutura de Receita Projetada - Renda Extra
+### Meta Ano 1 Completo (12 meses)
+**Objetivo:** R$ 25.000,00 em receita anual
+- **Meta Mensal:** R$ 2.100,00 (média)
+- **Clientes:** 4-6 projetos/mês
+- **Indicadores:** Pelo menos 30% via indicação
+
+### Estrutura de Receita Projetada - Ano 1
 ```
-Consultoria Acadêmica: 80% (R$ 12.000)
-├── Projetos TCC: R$ 4.800 (12 projetos × R$ 400)
-├── Projetos Mestrado: R$ 5.400 (9 projetos × R$ 600)
-└── Projetos Doutorado: R$ 1.800 (3 projetos × R$ 600)
+Análises para Psicologia: 75% (R$ 18.750)
+├── TCCs de Psicologia: R$ 8.400 (24 projetos × R$ 350)
+├── Dissertações/Teses: R$ 5.400 (9 projetos × R$ 600)
+└── Análises Psicométricas: R$ 4.950 (9 projetos × R$ 550)
 
-Cursos Online: 15% (R$ 2.250)
-├── Curso Básico: R$ 1.800 (12 alunos × R$ 150)
-└── Curso Avançado: R$ 450 (3 alunos × R$ 150)
+Clínicas de Psicologia: 15% (R$ 3.750)
+└── Pesquisas e relatórios: R$ 3.750 (5 projetos × R$ 750)
 
-Consultoria Empresarial: 5% (R$ 750)
-└── Projetos Empresariais: R$ 750 (1 projeto × R$ 750)
+Cursos para Psicólogos: 10% (R$ 2.500)
+├── "Estatística para Psicólogos": R$ 1.800 (12 alunos × R$ 150)
+└── Workshops e mentorias: R$ 700
 ```
 
-## 🚀 Roadmap de Desenvolvimento
+## 🚀 Roadmap de Desenvolvimento - Foco em Psicologia
 
-### Fase 1: Lançamento e Estabelecimento (Janeiro - Março 2025)
+### Fase 1: MVP e Validação do Nicho (Meses 1-3)
 
-#### Janeiro 2025
-- [x] **Site profissional desenvolvido**
-- [x] **Estrutura de serviços definida**
-- [x] **Portfólio com projetos reais**
-- [ ] **Publicação do site no GitHub Pages**
-- [ ] **Configuração de domínio personalizado**
-- [ ] **Criação de perfis em redes sociais**
-  - LinkedIn profissional
-  - Instagram para conteúdo educacional
-  - YouTube para tutoriais
+#### Mês 1: Reformulação e Lançamento
+- [x] **Site reformulado para nicho de psicologia**
+- [x] **Serviços de psicometria definidos**
+- [ ] **Publicação do site focado em psicologia**
+- [ ] **Criar perfil LinkedIn profissional**
+  - Bio focada em psicometria e estatística para psicologia
+  - Conectar com coordenadores de programas de Psicologia
+- [ ] **Criar conteúdo inicial**
+  - 2 posts no LinkedIn sobre estatística para psicólogos
+  - 1 artigo no blog: "Guia de Estatística para TCC de Psicologia"
 
-#### Fevereiro 2025
-- [ ] **Primeiros clientes (desconto promocional)**
-  - Meta: 3 projetos com 50% de desconto
-  - Foco em coleta de depoimentos
-- [ ] **Blog integrado ao site**
-  - 4 artigos sobre estatística
-  - SEO otimizado
-- [ ] **Sistema de agendamento**
-  - Calendly integrado
-  - WhatsApp Business
+#### Mês 2: Primeiros Clientes e Validação
+- [ ] **Ofertas promocionais direcionadas**
+  - 5 análises com 50% de desconto para estudantes de Psicologia
+  - Focar em coleta de depoimentos detalhados
+  - Pedir indicações
+- [ ] **Networking com faculdades de Psicologia**
+  - Contatar 10 coordenadores de cursos de Psicologia
+  - Oferecer workshop gratuito sobre "Estatística descomplicada"
+- [ ] **Conteúdo educacional**
+  - 2 artigos no blog sobre psicometria
+  - 4 posts no LinkedIn com dicas rápidas
+  
+#### Mês 3: Refinamento e Expansão
+- [ ] **Meta: 3-4 clientes pagantes**
+- [ ] **Template de relatório psicométrico**
+  - Documento profissional com interpretações
+  - Exemplos de redação para metodologia
+- [ ] **Calculadora de Alfa de Cronbach online**
+  - Ferramenta simples e gratuita
+  - Captura de e-mails (lead magnet)
+- [ ] **Grupo de WhatsApp**
+  - "Estatística para Psicólogos - Dúvidas Rápidas"
+  - Limite de 50 pessoas inicialmente
 
-#### Março 2025
-- [ ] **Primeiros 5 clientes pagantes**
-- [ ] **Sistema de templates**
-  - Templates de relatórios
-  - Guias de análise
-- [ ] **Parcerias iniciais**
-  - 2 universidades locais
-  - 1 orientador acadêmico
+### Fase 2: Consolidação e Crescimento (Meses 4-6)
 
-### Fase 2: Expansão e Crescimento (Abril - Junho 2025)
+#### Mês 4: Conteúdo e Autoridade
+- [ ] **Meta mensal:** R$ 1.500 (3-4 clientes)
+- [ ] **E-book gratuito**
+  - "Guia Completo de Estatística para TCC de Psicologia"
+  - 20-30 páginas com exemplos práticos
+  - Captura de e-mails
+- [ ] **Série de artigos no blog**
+  - "Como fazer Análise Fatorial passo a passo"
+  - "Alfa de Cronbach: Interpretação e Relatório"
+  - "Testes estatísticos mais usados em Psicologia"
+- [ ] **Instagram educacional**
+  - Criar perfil focado em desmistificar estatística
+  - 3 posts por semana
 
-#### Abril 2025
-- [ ] **Meta mensal:** R$ 800
-- [ ] **Cursos online básicos**
-  - Curso "Estatística para Iniciantes"
-  - 5 alunos inscritos
-- [ ] **Sistema de CRM simples**
-  - Controle básico de clientes
-  - Follow-up manual
+#### Mês 5: Parcerias e Networking
+- [ ] **Meta mensal:** R$ 1.800 (4-5 clientes)
+- [ ] **Parcerias com programas de pós-graduação**
+  - Contatar 5 programas de mestrado/doutorado em Psicologia
+  - Oferecer desconto para alunos indicados
+- [ ] **Workshop presencial/online**
+  - "Introdução à Psicometria" (gratuito)
+  - Parceria com faculdade de Psicologia
+- [ ] **Depoimentos e cases**
+  - Compilar 5 casos de sucesso
+  - Criar página de depoimentos no site
 
-#### Maio 2025
-- [ ] **Meta mensal:** R$ 1.000
-- [ ] **Calculadora de tamanho de amostra**
-  - Ferramenta online gratuita
-  - Lead generation
-- [ ] **Parcerias com universidades**
-  - 1 universidade parceira
-  - Descontos para estudantes
-
-#### Junho 2025
-- [ ] **Meta mensal:** R$ 1.200
-- [ ] **Consultoria empresarial**
-  - Primeiro cliente empresarial
-  - R$ 750 por projeto
+#### Mês 6: Produto Educacional
+- [ ] **Meta mensal:** R$ 2.000 (5-6 clientes)
+- [ ] **Curso online: "Estatística Aplicada à Psicologia"**
+  - 10 aulas em vídeo
+  - Materiais complementares
+  - Plataforma: Hotmart ou própria
+  - Preço: R$ 150-200
+- [ ] **Primeira clínica de psicologia como cliente**
+  - Análise de dados de atendimentos
+  - Projeto piloto
 - [ ] **Sistema de indicações**
-  - Programa simples de indicações
-  - 10% de comissão
+  - Desconto de 10% para quem indica
+  - R$ 50 de crédito para o indicador
 
-### Fase 3: Escala e Otimização (Julho - Setembro 2025)
+### Fase 3: Expansão e Autoridade (Meses 7-9)
 
-#### Julho 2025
+#### Mês 7: Diversificação
+- [ ] **Meta mensal:** R$ 2.500 (consultoria + cursos)
+- [ ] **Segundo curso: "Psicometria na Prática"**
+  - Foco em validação de instrumentos
+  - AFE, AFC, confiabilidade, validade
+  - 12 aulas em vídeo
+- [ ] **Canal no YouTube**
+  - 5 vídeos iniciais com tutoriais
+  - "Como calcular Alfa de Cronbach no SPSS"
+  - "Interpretando Análise Fatorial"
+- [ ] **Parcerias consolidadas**
+  - 3 programas de pós-graduação em Psicologia
+
+#### Mês 8: Escala e Automação
+- [ ] **Meta mensal:** R$ 3.000 
+- [ ] **Software web de psicometria (MVP)**
+  - Calculadora de confiabilidade automatizada
+  - Geração de relatórios básicos
+  - Versão gratuita limitada + versão paga
+- [ ] **Webinars mensais gratuitos**
+  - Tema: "Análise de Dados para Psicólogos"
+  - Captura de leads e divulgação de serviços
+- [ ] **Artigos científicos**
+  - Submeter artigo sobre psicometria
+  - Aumentar credibilidade acadêmica
+
+#### Mês 9: Consolidação
+- [ ] **Meta mensal:** R$ 3.500
+- [ ] **Sistema de mentoria para TCCs**
+  - Acompanhamento mensal de estudantes
+  - Plano de assinatura: R$ 200/mês por 3-6 meses
+- [ ] **Base de dados de instrumentos**
+  - Compilar instrumentos psicológicos validados
+  - Disponibilizar gratuitamente (marketing de conteúdo)
+- [ ] **Expansão para outras regiões**
+  - Clientes de todo o Brasil
+  - Atendimento 100% remoto consolidado
+
+### Fase 4: Escala e Liderança (Meses 10-12)
+
+#### Mês 10: Produtos Escaláveis
+- [ ] **Meta mensal:** R$ 4.000
+- [ ] **Terceiro curso: "Análise Fatorial para Psicólogos"**
+  - Específico sobre AFE e AFC
+  - Software: JASP, R, SPSS
+- [ ] **Parceria com psicólogo(a)**
+  - Colaborador freelancer para consultoria
+  - Dividir projetos complexos
+  - Escalar atendimento
+- [ ] **E-book pago**
+  - "Psicometria Completa: Da Teoria à Prática"
+  - Mais aprofundado que o gratuito
+  - R$ 50-70
+
+#### Mês 11: Autoridade e Reconhecimento
+- [ ] **Meta mensal:** R$ 4.500
+- [ ] **Participação em eventos**
+  - Congresso de Psicologia (palestrante)
+  - Workshop em universidades parceiras
+- [ ] **Podcast sobre Psicologia**
+  - Participar como convidado
+  - Falar sobre estatística e pesquisa
+- [ ] **Artigo científico publicado**
+  - Aumentar credibilidade acadêmica
+  - Divulgar nos canais
+
+#### Mês 12: Planejamento e Consolidação
 - [ ] **Meta mensal:** R$ 5.000
-- [ ] **Plataforma de cursos completa**
-  - 3 cursos disponíveis
-  - 50 alunos ativos
-- [ ] **Equipe de consultores**
-  - 1 consultor júnior
-  - Treinamento e padronização
-
-#### Agosto 2025
-- [ ] **Meta mensal:** R$ 6.000
-- [ ] **Software de análise estatística**
-  - MVP da ferramenta
-  - Testes com clientes
-- [ ] **Expansão geográfica**
-  - Clientes de outras regiões
-  - Consultoria remota
-
-#### Setembro 2025
-- [ ] **Meta mensal:** R$ 7.000
-- [ ] **Sistema de assinatura**
-  - Planos mensais
-  - Suporte contínuo
-- [ ] **Certificação profissional**
-  - Credenciamento acadêmico
-  - Validação de qualidade
-
-### Fase 4: Consolidação e Inovação (Outubro - Dezembro 2025)
-
-#### Outubro 2025
-- [ ] **Meta mensal:** R$ 8.000
-- [ ] **Inteligência artificial**
-  - Chatbot para suporte
-  - Análise automatizada
-- [ ] **Marketplace de serviços**
-  - Plataforma para outros consultores
-  - Comissão por transação
-
-#### Novembro 2025
-- [ ] **Meta mensal:** R$ 9.000
-- [ ] **Franquia/licenciamento**
-  - Modelo de negócio replicável
-  - Primeiros licenciados
-- [ ] **Expansão internacional**
-  - Clientes de outros países
-  - Adaptação cultural
-
-#### Dezembro 2025
-- [ ] **Meta mensal:** R$ 10.000
-- [ ] **Consolidação**
-  - Revisão de processos
-  - Otimização de operações
+- [ ] **Revisão do ano**
+  - Análise de métricas e resultados
+  - Identificar pontos fortes e fracos
+  - Compilar portfólio completo
 - [ ] **Planejamento 2026**
-  - Meta anual: R$ 120.000
-  - Expansão para 5 cidades
+  - Meta anual: R$ 50.000-60.000
+  - Contratar assistente/estagiário
+  - Expandir para áreas correlatas (educação, saúde)
+- [ ] **Celebração e gratidão**
+  - Agradecer clientes e parceiros
+  - Oferta especial de fim de ano
 
-## 📈 KPIs e Métricas de Sucesso
+## 📈 KPIs e Métricas de Sucesso - Foco em Psicologia
 
-### Métricas Financeiras
-- **Receita Mensal:** R$ 5.000 (meta)
-- **Ticket Médio:** R$ 600
-- **Taxa de Conversão:** 5%
-- **LTV (Lifetime Value):** R$ 1.500
-- **CAC (Customer Acquisition Cost):** R$ 50
+### Métricas Financeiras (Ano 1)
+- **Receita Mensal Média:** R$ 2.100 (meta)
+- **Ticket Médio por Projeto:** R$ 450
+- **Taxa de Conversão:** 5-8% (estudantes de psicologia são público quente)
+- **LTV (Lifetime Value):** R$ 900 (considerando indicações)
+- **CAC (Customer Acquisition Cost):** R$ 30-50 (marketing orgânico)
+- **% Receita de Indicações:** 30%+ (meta importante)
 
 ### Métricas Operacionais
-- **Clientes Mensais:** 10
-- **Projetos Concluídos:** 8/mês
-- **Tempo de Resposta:** <24h
-- **Satisfação do Cliente:** 4.8/5
-- **Taxa de Retenção:** 70%
+- **Clientes Mensais:** 4-6 (meta realista para início)
+- **Projetos Concluídos:** 4-6/mês
+- **Tempo de Resposta:** <24h (crucial para estudantes)
+- **Prazo de Entrega:** 7-10 dias úteis
+- **Satisfação do Cliente:** 4.8/5+
+- **Taxa de Indicação:** 30%+
 
-### Métricas de Marketing
-- **Tráfego Mensal:** 2.000 visitantes únicos
-- **Taxa de Conversão do Site:** 3%
-- **Leads Qualificados:** 50/mês
-- **Taxa de Abertura Email:** 25%
-- **Engajamento Social:** 5%
+### Métricas de Marketing e Conteúdo
+- **Tráfego Mensal:** 500-1.000 visitantes (qualidade > quantidade)
+- **Palavras-chave ranqueadas:** "psicometria", "análise fatorial psicologia"
+- **Taxa de Conversão do Site:** 5%
+- **Downloads de E-books:** 50+/mês
+- **Seguidores LinkedIn:** 300+ (público de psicologia)
+- **Engajamento em Posts:** 5-10% (nicho engajado)
+- **Visualizações YouTube:** 500+/vídeo (após 6 meses)
 
-## 🎯 Metas Específicas por Trimestre
+## 🎯 Metas Específicas por Trimestre - Foco em Psicologia
 
-### Q1 2025 (Jan-Mar)
-- **Receita:** R$ 8.000
-- **Clientes:** 15
-- **Projetos:** 12
-- **Cursos:** 1 lançado
-- **Parcerias:** 2 universidades
+### Q1 2025 (Meses 1-3): MVP e Validação
+- **Receita:** R$ 4.500
+- **Clientes:** 8-10 estudantes de psicologia
+- **Projetos:** 8-10 (incluindo promocionais)
+- **Depoimentos:** 5 depoimentos sólidos
+- **Conteúdo:** 3 artigos no blog, perfil LinkedIn criado
+- **Networking:** Contato com 10 coordenadores de Psicologia
 
-### Q2 2025 (Abr-Jun)
-- **Receita:** R$ 15.000
-- **Clientes:** 35
-- **Projetos:** 25
-- **Cursos:** 2 disponíveis
-- **Parcerias:** 5 universidades
+### Q2 2025 (Meses 4-6): Consolidação
+- **Receita:** R$ 6.300
+- **Clientes:** 12-15
+- **Projetos:** 12-15
+- **Cursos:** 1 curso lançado ("Estatística para Psicólogos")
+- **Parcerias:** 2 programas de pós-graduação
+- **E-book:** 1 e-book gratuito com 100+ downloads
+- **Clínicas:** 1 clínica de psicologia como cliente
 
-### Q3 2025 (Jul-Set)
-- **Receita:** R$ 18.000
-- **Clientes:** 50
-- **Projetos:** 35
-- **Cursos:** 3 disponíveis
-- **Equipe:** 2 pessoas
+### Q3 2025 (Meses 7-9): Expansão
+- **Receita:** R$ 9.000
+- **Clientes:** 18-20
+- **Projetos:** 18-20
+- **Cursos:** 2 cursos disponíveis
+- **YouTube:** Canal criado com 10 vídeos
+- **Parcerias:** 3-4 programas de pós-graduação
+- **Software:** MVP de ferramenta psicométrica
 
-### Q4 2025 (Out-Dez)
-- **Receita:** R$ 19.000
-- **Clientes:** 60
-- **Projetos:** 40
-- **Cursos:** 4 disponíveis
-- **Equipe:** 3 pessoas
+### Q4 2025 (Meses 10-12): Escala
+- **Receita:** R$ 13.500
+- **Clientes:** 22-25
+- **Projetos:** 22-25
+- **Cursos:** 3 cursos disponíveis
+- **Parceiro:** 1 psicólogo(a) colaborador
+- **Eventos:** Participação em 2 congressos
+- **Reconhecimento:** Referência em psicometria online
 
 ## 🛠️ Ferramentas e Tecnologias
 
@@ -215,72 +273,97 @@ Consultoria Empresarial: 5% (R$ 750)
 - **Analytics:** Google Analytics 4
 - **SEO:** SEMrush ou Ahrefs
 
-## 📊 Projeções de Crescimento
+## 📊 Projeções de Crescimento - Nicho de Psicologia
 
-### Cenário Conservador
+### Cenário Conservador (Realista)
 ```
-Ano 1: R$ 60.000
-Ano 2: R$ 120.000
-Ano 3: R$ 200.000
-Ano 4: R$ 300.000
-Ano 5: R$ 500.000
+Ano 1 (2025): R$ 25.000-30.000
+├── Consultoria: R$ 20.000
+├── Cursos: R$ 3.000
+└── Clínicas: R$ 4.000
+
+Ano 2 (2026): R$ 50.000-60.000
+├── Consultoria: R$ 35.000
+├── Cursos: R$ 12.000
+├── Clínicas: R$ 10.000
+└── Software/Ferramentas: R$ 3.000
+
+Ano 3 (2027): R$ 80.000-100.000
+├── Expansão para áreas correlatas
+├── Equipe de 2-3 pessoas
+└── Referência em psicometria
 ```
 
 ### Cenário Otimista
 ```
-Ano 1: R$ 80.000
-Ano 2: R$ 180.000
-Ano 3: R$ 350.000
-Ano 4: R$ 600.000
-Ano 5: R$ 1.000.000
+Ano 1 (2025): R$ 35.000-40.000
+Ano 2 (2026): R$ 80.000-100.000
+Ano 3 (2027): R$ 150.000-180.000
 ```
 
-## 🎯 Metas de Longo Prazo (5 anos)
+## 🎯 Metas de Longo Prazo (3-5 anos)
 
 ### Financeiras
-- **Receita Anual:** R$ 500.000
-- **Margem de Lucro:** 40%
-- **Equipe:** 10 pessoas
-- **Clientes Ativos:** 500/mês
+- **Receita Anual (Ano 3):** R$ 100.000-150.000
+- **Margem de Lucro:** 50-60% (serviços)
+- **Equipe:** 2-3 pessoas (incluindo freelancers)
+- **Clientes Ativos:** 60-80/ano
 
-### Operacionais
-- **Presença:** 10 cidades brasileiras
-- **Cursos:** 20 cursos disponíveis
-- **Software:** Plataforma completa
-- **Certificação:** Credenciamento nacional
+### Operacionais e Autoridade
+- **Posicionamento:** Referência em psicometria e estatística para psicologia
+- **Cursos:** 5-7 cursos especializados
+- **Software:** Plataforma web de análise psicométrica
+- **Parcerias:** 10+ programas de pós-graduação em Psicologia
+- **Publicações:** 3-5 artigos científicos publicados
 
-### Impacto
-- **Estudantes Ajudados:** 5.000
-- **Pesquisas Concluídas:** 1.000
-- **Universidades Parceiras:** 50
-- **Reconhecimento:** Líder de mercado
+### Impacto e Reconhecimento
+- **Estudantes de Psicologia Ajudados:** 200+
+- **TCCs/Dissertações Concluídos:** 150+
+- **Clínicas Atendidas:** 20+
+- **Seguidores/Comunidade:** 2.000+ psicólogos engajados
+- **Reconhecimento:** "Vá fazer com AM Análises" (boca a boca)
 
-## 📋 Checklist de Ações Imediatas
+### Possíveis Expansões (Ano 3+)
+- Áreas correlatas: Educação, Enfermagem, Saúde Pública
+- Livro: "Psicometria Descomplicada"
+- Certificação própria em análise de dados para psicólogos
+- Consultoria internacional (países de língua portuguesa)
 
-### Esta Semana
-- [ ] Publicar site no GitHub Pages
-- [ ] Configurar domínio personalizado
-- [ ] Criar perfil LinkedIn profissional
-- [ ] Configurar WhatsApp Business
-- [ ] Criar primeiro conteúdo para blog
+## 📋 Checklist de Ações Imediatas - Foco em Psicologia
+
+### Esta Semana (Ação Imediata)
+- [x] Reformular site para foco em psicologia
+- [x] Redefinir serviços para psicometria
+- [ ] Publicar site reformulado no GitHub Pages
+- [ ] Criar perfil LinkedIn focado em psicologia
+  - Bio: "Psicometria e Estatística Descomplicada para Psicólogos"
+  - Conectar com 20 profissionais da área
+- [ ] Post inaugural no LinkedIn
+  - "Por que a estatística não precisa ser o bicho de 7 cabeças do seu TCC"
 
 ### Próximas 2 Semanas
-- [ ] Lançar campanha de desconto promocional
-- [ ] Contatar 5 universidades locais
-- [ ] Criar templates de relatórios
-- [ ] Configurar Google Analytics
-- [ ] Desenvolver estratégia de conteúdo
+- [ ] Escrever primeiro artigo no blog
+  - "Guia Completo: Estatística para TCC de Psicologia"
+- [ ] Criar lista de 20 faculdades de Psicologia para contato
+- [ ] Preparar apresentação de serviços para coordenadores
+- [ ] Criar template básico de relatório psicométrico
+- [ ] Oferta promocional de lançamento
+  - "Primeiras 5 análises com 50% de desconto"
 
-### Próximo Mês
-- [ ] Conquistar primeiros 3 clientes
-- [ ] Coletar depoimentos e cases
-- [ ] Lançar primeiro curso online
-- [ ] Estabelecer parcerias iniciais
-- [ ] Otimizar processos operacionais
+### Próximo Mês (Mês 1 Completo)
+- [ ] Conquistar primeiros 2-3 clientes (estudantes de psicologia)
+- [ ] Contatar 10 coordenadores de cursos de Psicologia
+- [ ] Criar 2 posts educacionais no LinkedIn por semana
+- [ ] Começar calculadora de Alfa de Cronbach (ferramenta simples)
+- [ ] Organizar grupo de WhatsApp para comunidade
+- [ ] Coletar primeiro depoimento detalhado
+
+### Ação Crítica para Validação do Nicho
+🎯 **Nos primeiros 30 dias, conseguir pelo menos 2 clientes pagantes (mesmo com desconto) e 2 depoimentos sólidos. Isso validará o nicho de psicologia.**
 
 ---
 
 **Data de Criação:** Janeiro 2025  
-**Última Atualização:** Janeiro 2025  
-**Próxima Revisão:** Fevereiro 2025  
-**Status:** Ativo
+**Última Atualização:** Novembro 2025 (Reformulação para foco em Psicologia)  
+**Próxima Revisão:** Dezembro 2025  
+**Status:** MVP em Desenvolvimento - Foco em Psicologia 🧠

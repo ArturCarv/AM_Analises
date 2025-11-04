@@ -1,20 +1,21 @@
-# AM Análises - Site de Consultoria Estatística
+# AM Análises - Psicometria e Estatística para Psicologia
 
-## 📊 Sobre o Projeto
+## 🧠 Sobre o Projeto
 
-Site profissional para consultoria em análises estatísticas, desenvolvido com HTML5, CSS3 e JavaScript vanilla. O site apresenta serviços, projetos realizados e formulário de contato com validação.
+Site profissional especializado em consultoria de **psicometria e análises estatísticas para psicologia**. Desenvolvido com HTML5, CSS3 e JavaScript, o site oferece serviços direcionados para estudantes de psicologia, pesquisadores e clínicas, com foco em validação de instrumentos, análise de dados psicológicos e suporte para trabalhos acadêmicos.
 
 ## ✨ Características
 
+- **Foco em Psicologia**: Serviços especializados em psicometria e análise de dados psicológicos
 - **Design Responsivo**: Otimizado para desktop, tablet e mobile
-- **Acessibilidade**: Seguindo padrões WCAG 2.1
-- **SEO Otimizado**: Meta tags completas e estrutura semântica
-- **Performance**: Carregamento rápido e otimizado
-- **Formulário Inteligente**: Validação em tempo real e feedback visual
-- **Ferramentas Integradas**: Calculadora de tamanho de amostra
-- **Sistema de Agendamento**: Integração com WhatsApp
-- **Templates de Relatórios**: Downloads direcionados
-- **Dashboard Financeiro**: Controle privado de receitas e metas
+- **SEO Especializado**: Otimizado para "psicometria", "estatística psicologia", "análise fatorial"
+- **Conteúdo Educacional**: Blog com artigos sobre estatística aplicada à psicologia
+- **Ferramentas para Psicólogos**: 
+  - Calculadora de Alfa de Cronbach
+  - Calculadora de tamanho de amostra para pesquisas psicológicas
+  - Templates de relatórios psicométricos
+- **Atendimento Especializado**: Linguagem acessível e contexto aplicado à psicologia
+- **Integração WhatsApp**: Comunicação direta e rápida para tirar dúvidas
 
 ## 🚀 Como Publicar
 
@@ -198,4 +199,21 @@ Este projeto é de uso pessoal/profissional. Todos os direitos reservados.
 
 ---
 
-**AM Análises** - Transformando dados em insights valiosos para seu negócio.
+**AM Análises** - Psicometria e Estatística Descomplicada para Psicólogos.
+
+## 🎯 Público-Alvo
+
+Este site é direcionado especialmente para:
+- **Estudantes de Psicologia** (graduação e pós-graduação)
+- **Psicólogos pesquisadores**
+- **Clínicas de psicologia**
+- **Professores de metodologia em Psicologia**
+
+## 🔬 Serviços Especializados
+
+- Validação de instrumentos psicológicos (escalas, questionários)
+- Análise Fatorial Exploratória (AFE) e Confirmatória (AFC)
+- Análise de confiabilidade (Alfa de Cronbach, Ômega)
+- Testes estatísticos aplicados à psicologia (t, ANOVA, correlação)
+- Análise de mediação e moderação
+- Suporte para TCCs, dissertações e teses em Psicologia
