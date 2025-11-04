@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Alfa de Cronbach | AM Análises</title>
+    <meta name="description" content="Calculadora gratuita de Alfa de Cronbach para psicólogos. Avalie a confiabilidade do seu instrumento psicológico de forma fácil e rápida.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .input-section {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .input-section h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .input-group small {
+            display: block;
+            color: #718096;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .data-input {
+            font-family: 'Courier New', monospace;
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+
+        .result-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .result-section.active {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .alpha-display {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .alpha-value {
+            font-size: 72px;
+            font-weight: 900;
+            margin: 20px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .alpha-interpretation {
+            font-size: 24px;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .interpretation-scale {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .scale-item {
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid;
+        }
+
+        .scale-item.poor { border-left-color: #e53e3e; }
+        .scale-item.questionable { border-left-color: #ed8936; }
+        .scale-item.acceptable { border-left-color: #ecc94b; }
+        .scale-item.good { border-left-color: #48bb78; }
+        .scale-item.excellent { border-left-color: #38a169; }
+
+        .scale-item.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .scale-range {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .scale-label {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .recommendation {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .recommendation h4 {
+            color: #f59e0b;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .recommendation p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .footer p {
+            color: #718096;
+            margin-bottom: 15px;
+        }
+
+        .footer .btn {
+            display: inline-flex;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .alpha-value {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-calculator"></i> Calculadora de Alfa de Cronbach</h1>
+            <div class="subtitle">Avalie a confiabilidade do seu instrumento psicológico</div>
+        </div>
+
+        <div class="info-box">
+            <h3><i class="fas fa-info-circle"></i> O que é o Alfa de Cronbach?</h3>
+            <p><strong>Alfa de Cronbach (α)</strong> é uma medida de <strong>consistência interna</strong> (confiabilidade) de um instrumento psicológico. Ele varia de 0 a 1 e indica o quanto os itens de uma escala medem o mesmo construto.</p>
+            <p><strong>Interpretação:</strong> α < 0.60 (Pobre) | 0.60-0.69 (Questionável) | 0.70-0.79 (Aceitável) | 0.80-0.89 (Bom) | ≥ 0.90 (Excelente)</p>
+        </div>
+
+        <div class="input-section">
+            <h2><i class="fas fa-database"></i> Entrada de Dados</h2>
+            
+            <div class="input-group">
+                <label for="numItems">Número de Itens da Escala:</label>
+                <input type="number" id="numItems" min="2" placeholder="Ex: 10" required>
+                <small>Quantidade de perguntas/itens do seu instrumento</small>
+            </div>
+
+            <div class="input-group">
+                <label for="dataInput">Dados dos Participantes (matriz):</label>
+                <textarea id="dataInput" class="data-input" placeholder="Cole seus dados aqui. Cada linha = 1 participante, valores separados por espaço, vírgula ou tab.&#10;Exemplo:&#10;3 4 5 3 4&#10;2 3 4 2 3&#10;4 5 5 4 5"></textarea>
+                <small>💡 <strong>Formato:</strong> Cada linha representa um participante, com as respostas aos itens separadas por espaço, vírgula ou tab</small>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="calculateAlpha()">
+                    <i class="fas fa-calculator"></i> Calcular Alfa de Cronbach
+                </button>
+                <button class="btn btn-secondary" onclick="clearData()">
+                    <i class="fas fa-eraser"></i> Limpar
+                </button>
+            </div>
+        </div>
+
+        <div id="resultSection" class="result-section">
+            <h2><i class="fas fa-chart-line"></i> Resultados da Análise</h2>
+            
+            <div class="alpha-display">
+                <div class="alpha-interpretation">Alfa de Cronbach (α)</div>
+                <div class="alpha-value" id="alphaValue">-</div>
+                <div class="alpha-interpretation" id="interpretation">-</div>
+            </div>
+
+            <div class="interpretation-scale">
+                <div class="scale-item poor">
+                    <div class="scale-range">< 0.60</div>
+                    <div class="scale-label">Pobre</div>
+                </div>
+                <div class="scale-item questionable">
+                    <div class="scale-range">0.60 - 0.69</div>
+                    <div class="scale-label">Questionável</div>
+                </div>
+                <div class="scale-item acceptable">
+                    <div class="scale-range">0.70 - 0.79</div>
+                    <div class="scale-label">Aceitável</div>
+                </div>
+                <div class="scale-item good">
+                    <div class="scale-range">0.80 - 0.89</div>
+                    <div class="scale-label">Bom</div>
+                </div>
+                <div class="scale-item excellent">
+                    <div class="scale-range">≥ 0.90</div>
+                    <div class="scale-label">Excelente</div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="numItemsResult">-</div>
+                    <div class="stat-label">Número de Itens</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="numParticipants">-</div>
+                    <div class="stat-label">Participantes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="avgItemVar">-</div>
+                    <div class="stat-label">Var. Média dos Itens</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="totalVar">-</div>
+                    <div class="stat-label">Variância Total</div>
+                </div>
+            </div>
+
+            <div class="recommendation">
+                <h4><i class="fas fa-lightbulb"></i> Recomendação</h4>
+                <p id="recommendationText">-</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>💡 Precisa de ajuda com análises psicométricas?</strong></p>
+            <p>Oferecemos consultoria especializada em validação de instrumentos, análise fatorial e psicometria aplicada.</p>
+            <a href="index.html#contact" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> Fale Conosco
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function calculateAlpha() {
+            const numItems = parseInt(document.getElementById('numItems').value);
+            const dataInput = document.getElementById('dataInput').value.trim();
+
+            if (!numItems || numItems < 2) {
+                alert('Por favor, insira um número válido de itens (mínimo 2).');
+                return;
+            }
+
+            if (!dataInput) {
+                alert('Por favor, insira os dados dos participantes.');
+                return;
+            }
+
+            // Parse data
+            const lines = dataInput.split('\n').filter(line => line.trim());
+            const data = [];
+            
+            for (let line of lines) {
+                const values = line.trim().split(/[\s,\t]+/).map(v => parseFloat(v));
+                if (values.length !== numItems) {
+                    alert(`Erro: Cada linha deve ter exatamente ${numItems} valores. Linha com problema: "${line}"`);
+                    return;
+                }
+                if (values.some(v => isNaN(v))) {
+                    alert(`Erro: Valores inválidos encontrados. Linha: "${line}"`);
+                    return;
+                }
+                data.push(values);
+            }
+
+            if (data.length < 2) {
+                alert('Por favor, insira dados de pelo menos 2 participantes.');
+                return;
+            }
+
+            // Calculate variances
+            const n = data.length;
+            const k = numItems;
+
+            // Calculate item variances
+            const itemVariances = [];
+            for (let j = 0; j < k; j++) {
+                const itemScores = data.map(row => row[j]);
+                const mean = itemScores.reduce((a, b) => a + b, 0) / n;
+                const variance = itemScores.reduce((sum, score) => sum + Math.pow(score - mean, 2), 0) / n;
+                itemVariances.push(variance);
+            }
+
+            // Calculate total scores
+            const totalScores = data.map(row => row.reduce((a, b) => a + b, 0));
+            const totalMean = totalScores.reduce((a, b) => a + b, 0) / n;
+            const totalVariance = totalScores.reduce((sum, score) => sum + Math.pow(score - totalMean, 2), 0) / n;
+
+            // Calculate Cronbach's Alpha
+            const sumItemVar = itemVariances.reduce((a, b) => a + b, 0);
+            const alpha = (k / (k - 1)) * (1 - (sumItemVar / totalVariance));
+
+            // Display results
+            displayResults(alpha, k, n, itemVariances, totalVariance);
+        }
+
+        function displayResults(alpha, k, n, itemVariances, totalVariance) {
+            // Show result section
+            document.getElementById('resultSection').classList.add('active');
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+
+            // Display alpha value
+            document.getElementById('alphaValue').textContent = alpha.toFixed(3);
+            
+            // Interpretation
+            let interpretation = '';
+            let recommendation = '';
+            
+            if (alpha < 0.60) {
+                interpretation = 'Pobre';
+                recommendation = '⚠️ A confiabilidade está abaixo do aceitável. Considere revisar os itens da escala, verificar se há itens mal formulados ou que não se relacionam bem com o construto. Pode ser necessário reformular ou excluir itens problemáticos.';
+                highlightScale('poor');
+            } else if (alpha < 0.70) {
+                interpretation = 'Questionável';
+                recommendation = '⚠️ A confiabilidade é questionável. É recomendável melhorar a escala antes de usá-la em pesquisas definitivas. Analise a correlação item-total e considere revisar itens com baixa correlação.';
+                highlightScale('questionable');
+            } else if (alpha < 0.80) {
+                interpretation = 'Aceitável';
+                recommendation = '✅ A confiabilidade é aceitável para instrumentos em desenvolvimento ou pesquisas exploratórias. Para uso em pesquisas definitivas, considere melhorias se possível.';
+                highlightScale('acceptable');
+            } else if (alpha < 0.90) {
+                interpretation = 'Bom';
+                recommendation = '✅ Excelente! A confiabilidade é boa e adequada para uso em pesquisas. O instrumento demonstra consistência interna satisfatória.';
+                highlightScale('good');
+            } else {
+                interpretation = 'Excelente';
+                recommendation = '✅ Excelente! A confiabilidade é muito alta. Atenção: valores muito próximos de 1.0 podem indicar redundância entre itens (itens muito similares). Verifique se há itens que medem exatamente a mesma coisa.';
+                highlightScale('excellent');
+            }
+
+            document.getElementById('interpretation').textContent = interpretation;
+            document.getElementById('recommendationText').textContent = recommendation;
+
+            // Display statistics
+            document.getElementById('numItemsResult').textContent = k;
+            document.getElementById('numParticipants').textContent = n;
+            const avgItemVar = itemVariances.reduce((a, b) => a + b, 0) / k;
+            document.getElementById('avgItemVar').textContent = avgItemVar.toFixed(3);
+            document.getElementById('totalVar').textContent = totalVariance.toFixed(3);
+        }
+
+        function highlightScale(level) {
+            document.querySelectorAll('.scale-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector('.scale-item.' + level).classList.add('active');
+        }
+
+        function clearData() {
+            document.getElementById('numItems').value = '';
+            document.getElementById('dataInput').value = '';
+            document.getElementById('resultSection').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
+

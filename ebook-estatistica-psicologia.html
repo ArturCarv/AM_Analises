@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-book Gratuito: Estatística para TCC de Psicologia | AM Análises</title>
+    <meta name="description" content="Baixe grátis o guia completo de Estatística para TCC de Psicologia. Aprenda os conceitos essenciais, testes mais usados e como reportar resultados.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .ebook-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .preview-image {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #e2e8f0;
+        }
+
+        .preview-image i {
+            font-size: 120px;
+            color: #667eea;
+            opacity: 0.8;
+        }
+
+        .preview-details h2 {
+            color: #2d3748;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .preview-details ul {
+            list-style: none;
+        }
+
+        .preview-details li {
+            padding: 12px 0;
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.6;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .preview-details li:last-child {
+            border-bottom: none;
+        }
+
+        .preview-details li i {
+            color: #48bb78;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .form-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .form-section h3 {
+            color: #2d3748;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .privacy-note {
+            text-align: center;
+            color: #718096;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-card i {
+            font-size: 48px;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #718096;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .testimonial {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .testimonial p {
+            color: #4a5568;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .testimonial .author {
+            color: #667eea;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .success-message {
+            background: #f0fdf4;
+            border-left: 4px solid #48bb78;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message.active {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        .success-message i {
+            font-size: 64px;
+            color: #48bb78;
+            margin-bottom: 15px;
+        }
+
+        .success-message h3 {
+            color: #2d3748;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            .header {
+                padding: 40px 20px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .ebook-preview {
+                grid-template-columns: 1fr;
+            }
+            .preview-image i {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-book"></i> E-book Gratuito</h1>
+            <div class="subtitle">Estatística Descomplicada para TCC de Psicologia</div>
+        </div>
+
+        <div class="content">
+            <div class="ebook-preview">
+                <div class="preview-image">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="preview-details">
+                    <h2>O que você vai aprender:</h2>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Conceitos básicos de estatística aplicados à psicologia</li>
+                        <li><i class="fas fa-check-circle"></i> Quando usar cada teste estatístico</li>
+                        <li><i class="fas fa-check-circle"></i> Como reportar resultados no TCC</li>
+                        <li><i class="fas fa-check-circle"></i> Interpretação de p-valores e significância</li>
+                        <li><i class="fas fa-check-circle"></i> Psicometria básica: confiabilidade e validade</li>
+                        <li><i class="fas fa-check-circle"></i> Erros comuns e como evitá-los</li>
+                        <li><i class="fas fa-check-circle"></i> Exemplos práticos com dados de psicologia</li>
+                        <li><i class="fas fa-check-circle"></i> Checklist para análise de dados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h4>40+ Páginas</h4>
+                    <p>Conteúdo completo e direto ao ponto</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Linguagem Acessível</h4>
+                    <p>Explicações sem jargões excessivos</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Exemplos Práticos</h4>
+                    <p>Cases reais da psicologia</p>
+                </div>
+            </div>
+
+            <div id="formSection" class="form-section">
+                <h3>📧 Receba o E-book Gratuitamente</h3>
+                <form id="ebookForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo:</label>
+                        <input type="text" id="name" required placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="stage">Você está em qual fase?</label>
+                        <select id="stage" style="width: 100%; padding: 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px;">
+                            <option value="">Selecione...</option>
+                            <option value="graduacao">Graduação em Psicologia</option>
+                            <option value="tcc">Fazendo TCC</option>
+                            <option value="mestrado">Mestrado</option>
+                            <option value="doutorado">Doutorado</option>
+                            <option value="profissional">Psicólogo(a) formado(a)</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-download"></i> Baixar E-book Grátis
+                    </button>
+                    <p class="privacy-note">
+                        🔒 Seus dados estão seguros. Não enviamos spam.
+                    </p>
+                </form>
+            </div>
+
+            <div id="successMessage" class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>E-book Enviado com Sucesso!</h3>
+                <p>Verifique sua caixa de entrada (e spam) para acessar o e-book.<br>Em breve você receberá conteúdos exclusivos sobre estatística para psicologia.</p>
+                <a href="#" id="downloadLink" class="download-btn" onclick="downloadEbook()">
+                    <i class="fas fa-download"></i> Download Direto (Clique Aqui)
+                </a>
+            </div>
+
+            <div class="testimonial">
+                <p>"Este e-book me salvou! Estava completamente perdida com estatística no TCC e consegui entender tudo de forma clara e objetiva. Recomendo muito!"</p>
+                <div class="author">- Marina S., Graduanda em Psicologia</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('ebookForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const stage = document.getElementById('stage').value;
+
+            // Aqui você pode integrar com um serviço de e-mail marketing
+            // Por enquanto, vamos simular o envio
+            
+            console.log('Dados capturados:', { name, email, stage });
+            
+            // Esconder formulário e mostrar mensagem de sucesso
+            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('successMessage').classList.add('active');
+            
+            // Scroll suave para mensagem
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        function downloadEbook() {
+            // Aqui você pode gerar/servir o PDF do e-book
+            // Por enquanto, vamos mostrar um alerta
+            alert('📚 O download do e-book será iniciado em breve!\n\n' + 
+                  'Em produção, este link apontaria para o PDF real do e-book.\n\n' +
+                  'Obrigado pelo interesse!');
+            
+            // Em produção, você faria algo como:
+            // window.location.href = 'ebook-estatistica-tcc-psicologia.pdf';
+        }
+    </script>
+</body>
+</html>
+
