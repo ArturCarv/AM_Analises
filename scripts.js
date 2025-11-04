@@ -47,8 +47,10 @@ document.querySelectorAll('.fade-in').forEach(el => {
 // ================================
 
 const contactForm = document.getElementById('contactForm');
-// URL do Google Apps Script - substitua pelo seu URL
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwknWhzJZDqLdlNcF3uGGepQ13OebYBYVggMfAVVuAP/dev';
+
+// ================================
+// Formulário de Contato
+// ================================
 
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -66,27 +68,40 @@ contactForm.addEventListener('submit', function(e) {
         message: formData.get('message').trim()
     };
 
-    // Envia os dados para o Google Apps Script
-    fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => {
-        alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-        this.reset();
-    })
-    .catch(error => {
-        console.error('Erro!', error.message);
-        alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
-    })
-    .finally(() => {
+    // Validação básica
+    if (!data.name || !data.email || !data.subject || !data.message) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-    });
+        return;
+    }
+
+    // Validação de e-mail
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+        alert('Por favor, insira um e-mail válido.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        return;
+    }
+
+    // OPÇÃO 1: Usar Formspree (gratuito, até 50 envios/mês)
+    // Acesse https://formspree.io e crie uma conta gratuita
+    // Eles fornecerão um endpoint único. Por enquanto, usando fallback.
+    
+    // OPÇÃO 2: Enviar via mailto: (abre cliente de e-mail)
+    const mailtoLink = `mailto:amanalises.consultoria@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Nome: ${data.name}\nE-mail: ${data.email}\n\nMensagem:\n${data.message}`)}`;
+    
+    // Tenta abrir o cliente de e-mail
+    window.location.href = mailtoLink;
+    
+    // Mostra mensagem de sucesso
+    setTimeout(() => {
+        alert('✅ Seu cliente de e-mail foi aberto!\n\nSe não abriu automaticamente, envie um e-mail para:\namanalises.consultoria@gmail.com\n\nOu use o WhatsApp flutuante no canto inferior direito.');
+        this.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }, 1000);
 });
 
 // ================================
