@@ -1,6 +1,5 @@
-# Arquivos Financeiros Privados - NÃO COMMITAR
-financial-dashboard.html
-DASHBOARD_GUIDE.md
+# Pasta Privada - Arquivos Financeiros e Pessoais - NÃO COMMITAR
+private/
 
 # Arquivos de Backup
 *.backup
@@ -21,3 +20,14 @@ desktop.ini
 # Arquivos de Configuração Local
 config.local.json
 secrets.json
+
+# Node modules (caso use npm no futuro)
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/

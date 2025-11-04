@@ -161,30 +161,60 @@ otimizar_imagens.bat
 
 ```
 Site/
-├── index.html                    # Página principal
-├── financial_dashboard.py        # Dashboard financeiro Python (PRIVADO)
-├── requirements.txt              # Dependências Python
-├── PROJECT_BRIEF.md              # Brief completo do projeto
-├── GOALS_ROADMAP.md              # Metas e roadmap detalhado
-├── DEPLOY_GUIDE.md               # Guia de deploy no GitHub
-├── NEXT_STEPS.md                 # Próximos passos pós-deploy
-├── optimize_images.py            # Script de otimização de imagens
-├── otimizar_imagens.bat          # Script Windows para otimização
-├── deploy_github.ps1             # Script de deploy para GitHub
-├── deploy_github_simples.ps1     # Script simplificado de deploy
-├── GUIA_GITHUB_PAGES.md          # Guia completo para GitHub Pages
-├── .gitignore                    # Arquivos ignorados pelo Git
-├── Logo/
-│   └── Logo.png                 # Logo da empresa
-├── Exemplos/                    # Imagens de projetos (originais)
+├── index.html                    # ✅ Página principal do site
+├── styles.css                    # ✅ Estilos principais
+├── scripts.js                    # ✅ Scripts principais
+├── README.md                     # ✅ Este arquivo
+├── PROJECT_BRIEF.md              # ✅ Brief completo do projeto
+├── GOALS_ROADMAP.md              # ✅ Metas e roadmap detalhado
+├── .gitignore                    # ✅ Arquivos ignorados pelo Git
+│
+├── Logo/                         # 🎨 Logo e imagens da marca
+│   └── Logo.png
+│
+├── Exemplos/                     # 📸 Imagens de projetos exemplo
 │   ├── BI/
-│   ├── Cidades Seguras/
-│   ├── EM/
 │   ├── LGPD/
 │   └── Paloma/
-├── Exemplos_Optimized/          # Imagens otimizadas (geradas automaticamente)
-└── README.md                    # Este arquivo
+│
+├── docs/                         # 📚 Documentação técnica
+│   ├── README.md
+│   ├── DEPLOY_GUIDE.md          # Guia de deploy
+│   ├── GUIA_GITHUB_PAGES.md     # Guia GitHub Pages
+│   └── NEXT_STEPS.md            # Próximos passos
+│
+├── blog/                         # 📝 Blog (Fase 2 - futuro)
+│   ├── README.md
+│   ├── blog.html
+│   ├── blog-post-1.html
+│   ├── blog-scripts.js
+│   ├── blog-styles.css
+│   └── BLOG_README.md
+│
+├── tools/                        # 🛠️ Scripts e ferramentas
+│   ├── README.md
+│   ├── deploy_github.ps1        # Deploy automático
+│   ├── deploy_github_simples.ps1
+│   ├── optimize_images.py       # Otimização de imagens
+│   └── otimizar_imagens.bat
+│
+└── private/                      # 🔒 Arquivos privados (NÃO commitados)
+    ├── README.md
+    ├── financial_dashboard.py
+    ├── financial-dashboard.html
+    ├── DASHBOARD_GUIDE.md
+    ├── PYTHON_DASHBOARD_GUIDE.md
+    └── requirements.txt
 ```
+
+### 📁 Descrição das Pastas
+
+- **`docs/`** - Documentação técnica de deploy e configuração
+- **`blog/`** - Blog integrado (será implementado na Fase 2)
+- **`tools/`** - Scripts utilitários para desenvolvimento
+- **`private/`** - Arquivos pessoais e financeiros (ignorados pelo Git)
+- **`Logo/`** - Imagens da marca
+- **`Exemplos/`** - Imagens de projetos exemplo para portfólio
 
 ## 📞 Suporte
 
