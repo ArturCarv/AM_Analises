@@ -93,7 +93,7 @@ Estes exemplos demonstram:
 
 Se você é estudante de psicologia ou pesquisador e precisa de análises como essas:
 
-📧 **Contato:** artur.carvalhom2@gmail.com  
+📧 **Contato:** amanalises.consultoria@gmail.com  
 📱 **WhatsApp:** +55 61 99861-9189  
 🌐 **Site:** https://arturcarv.github.io/AM_Analises
 

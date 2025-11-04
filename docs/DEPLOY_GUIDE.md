@@ -34,7 +34,7 @@ git init
 ### 2.2 Configurar usuário Git (se não configurado)
 ```bash
 git config user.name "Artur Carvalho"
-git config user.email "artur.carvalhom2@gmail.com"
+git config user.email "amanalises.consultoria@gmail.com"
 ```
 
 ### 2.3 Adicionar todos os arquivos
