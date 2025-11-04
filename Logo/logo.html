@@ -1,0 +1,127 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Opção 1: Forma de "A" e "M" integradas como ondas/curvas (análise) -->
+  <g id="option1">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Forma abstrata que sugere A e M em curvas -->
+    <path d="M 50 90 L 65 50 L 80 90 M 80 90 L 95 50 L 110 90" 
+          fill="none" stroke="url(#grad1)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Pontos de dados nas intersecções -->
+    <circle cx="65" cy="50" r="3" fill="#2563eb"/>
+    <circle cx="80" cy="90" r="3" fill="#7c3aed"/>
+    <circle cx="95" cy="50" r="3" fill="#7c3aed"/>
+    
+    <!-- Círculo envolvente sutil -->
+    <circle cx="80" cy="70" r="45" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.2"/>
+    
+    <!-- Texto -->
+    <text x="140" y="74" font-family="'Arial', sans-serif" font-size="24" font-weight="700" fill="#1e293b">AM Análises</text>
+    <text x="140" y="92" font-family="'Arial', sans-serif" font-size="12" fill="#64748b">Psicometria & Estatística</text>
+  </g>
+  
+  <!-- Opção 2: Gráfico de barras formando picos A e M -->
+  <g id="option2" transform="translate(0, 150)">
+    <defs>
+      <linearGradient id="grad2" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Barras que formam silhueta de A e M -->
+    <rect x="52" y="75" width="6" height="25" fill="url(#grad2)" rx="1" opacity="0.7"/>
+    <rect x="62" y="60" width="6" height="40" fill="url(#grad2)" rx="1"/>
+    <rect x="72" y="70" width="6" height="30" fill="url(#grad2)" rx="1" opacity="0.8"/>
+    <rect x="82" y="65" width="6" height="35" fill="url(#grad2)" rx="1" opacity="0.9"/>
+    <rect x="92" y="58" width="6" height="42" fill="url(#grad2)" rx="1"/>
+    <rect x="102" y="72" width="6" height="28" fill="url(#grad2)" rx="1" opacity="0.8"/>
+    
+    <!-- Linha de base -->
+    <line x1="50" y1="102" x2="110" y2="102" stroke="#64748b" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Texto -->
+    <text x="130" y="74" font-family="'Arial', sans-serif" font-size="24" font-weight="700" fill="#1e293b">AM Análises</text>
+    <text x="130" y="92" font-family="'Arial', sans-serif" font-size="12" fill="#64748b">Psicometria & Estatística</text>
+  </g>
+  
+  <!-- Opção 3: Nós conectados formando estrutura A-M (rede neural/correlação) -->
+  <g id="option3" transform="translate(400, 0)">
+    <defs>
+      <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Linhas de conexão (estrutura A e M) -->
+    <line x1="60" y1="90" x2="80" y2="50" stroke="url(#grad3)" stroke-width="2" opacity="0.4"/>
+    <line x1="80" y1="50" x2="100" y2="90" stroke="url(#grad3)" stroke-width="2" opacity="0.4"/>
+    <line x1="70" y1="70" x2="90" y2="70" stroke="url(#grad3)" stroke-width="2" opacity="0.4"/>
+    
+    <line x1="85" y1="90" x2="95" y2="50" stroke="url(#grad3)" stroke-width="2" opacity="0.4"/>
+    <line x1="95" y1="50" x2="105" y2="90" stroke="url(#grad3)" stroke-width="2" opacity="0.4"/>
+    <line x1="95" y1="70" x2="105" y2="70" stroke="url(#grad3)" stroke-width="2" opacity="0.3"/>
+    
+    <!-- Nós (pontos de dados) -->
+    <circle cx="60" cy="90" r="4" fill="#8b5cf6"/>
+    <circle cx="80" cy="50" r="5" fill="#a855f7"/>
+    <circle cx="100" cy="90" r="4" fill="#c084fc"/>
+    <circle cx="70" cy="70" r="3.5" fill="#8b5cf6" opacity="0.7"/>
+    <circle cx="90" cy="70" r="3.5" fill="#a855f7" opacity="0.7"/>
+    
+    <circle cx="85" cy="90" r="4" fill="#d946ef"/>
+    <circle cx="95" cy="50" r="5" fill="#ec4899"/>
+    <circle cx="105" cy="90" r="4" fill="#f472b6"/>
+    <circle cx="95" cy="70" r="3.5" fill="#ec4899" opacity="0.7"/>
+    
+    <!-- Texto -->
+    <text x="130" y="74" font-family="'Arial', sans-serif" font-size="24" font-weight="700" fill="#1e293b">AM Análises</text>
+    <text x="130" y="92" font-family="'Arial', sans-serif" font-size="12" fill="#64748b">Psicometria & Estatística</text>
+  </g>
+  
+  <!-- Opção 4: Curva gaussiana/distribuição formando A e M -->
+  <g id="option4" transform="translate(400, 150)">
+    <defs>
+      <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Primeira curva (A) -->
+    <path d="M 52 95 Q 65 45, 78 95" 
+          fill="none" stroke="url(#grad4)" stroke-width="2.5" opacity="0.8"/>
+    <path d="M 52 95 Q 65 45, 78 95" 
+          fill="url(#grad4)" opacity="0.1"/>
+    
+    <!-- Segunda curva (M) -->
+    <path d="M 82 95 Q 95 50, 108 95" 
+          fill="none" stroke="url(#grad4)" stroke-width="2.5" opacity="0.8"/>
+    <path d="M 82 95 Q 95 50, 108 95" 
+          fill="url(#grad4)" opacity="0.1"/>
+    
+    <!-- Pontos no topo das curvas -->
+    <circle cx="65" cy="45" r="3" fill="#14b8a6"/>
+    <circle cx="95" cy="50" r="3" fill="#3b82f6"/>
+    
+    <!-- Linha de base -->
+    <line x1="52" y1="95" x2="108" y2="95" stroke="#64748b" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Texto -->
+    <text x="130" y="74" font-family="'Arial', sans-serif" font-size="24" font-weight="700" fill="#1e293b">AM Análises</text>
+    <text x="130" y="92" font-family="'Arial', sans-serif" font-size="12" fill="#64748b">Psicometria & Estatística</text>
+  </g>
+  
+  <!-- Labels das opções -->
+  <text x="80" y="130" font-family="'Arial', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Opção 1: Ondas analíticas</text>
+  <text x="80" y="280" font-family="'Arial', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Opção 2: Gráfico de barras</text>
+  <text x="480" y="130" font-family="'Arial', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Opção 3: Rede de conexões</text>
+  <text x="480" y="280" font-family="'Arial', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Opção 4: Curvas gaussianas</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente principal -->
+    <linearGradient id="gradMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente para curvas -->
+    <linearGradient id="gradCurve" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <!-- Sombra suave -->
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Círculo de fundo sutil -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="url(#gradMain)" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Primeira curva gaussiana (A) com área preenchida -->
+  <path d="M 40 140 Q 60 60, 80 140" 
+        fill="url(#gradCurve)" opacity="0.2"/>
+  <path d="M 40 140 Q 60 60, 80 140" 
+        fill="none" stroke="url(#gradMain)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Segunda curva gaussiana (M) com área preenchida -->
+  <path d="M 80 140 Q 100 70, 120 140" 
+        fill="url(#gradCurve)" opacity="0.2"/>
+  <path d="M 80 140 Q 100 70, 120 140" 
+        fill="none" stroke="url(#gradMain)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Terceira curva para completar o M -->
+  <path d="M 120 140 Q 140 70, 160 140" 
+        fill="url(#gradCurve)" opacity="0.2"/>
+  <path d="M 120 140 Q 140 70, 160 140" 
+        fill="none" stroke="url(#gradMain)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Linhas de conexão entre os picos (estilo rede neural) -->
+  <line x1="60" y1="60" x2="100" y2="70" stroke="#7c3aed" stroke-width="1.5" opacity="0.3"/>
+  <line x1="100" y1="70" x2="140" y2="70" stroke="#ec4899" stroke-width="1.5" opacity="0.3"/>
+  
+  <!-- Nós/Pontos de dados nos picos -->
+  <circle cx="60" cy="60" r="5" fill="#2563eb" filter="url(#shadow)"/>
+  <circle cx="100" cy="70" r="6" fill="#7c3aed" filter="url(#shadow)"/>
+  <circle cx="140" cy="70" r="5" fill="#ec4899" filter="url(#shadow)"/>
+  
+  <!-- Pontos menores nas intersecções -->
+  <circle cx="80" cy="140" r="3" fill="#3b82f6" opacity="0.7"/>
+  <circle cx="120" cy="140" r="3" fill="#a855f7" opacity="0.7"/>
+  
+  <!-- Linha de base sutil -->
+  <line x1="40" y1="140" x2="160" y2="140" stroke="#64748b" stroke-width="1.5" opacity="0.2"/>
+  
+  <!-- Detalhes decorativos (pontos de dados menores) -->
+  <circle cx="50" cy="100" r="2" fill="#3b82f6" opacity="0.4"/>
+  <circle cx="90" cy="95" r="2" fill="#8b5cf6" opacity="0.4"/>
+  <circle cx="130" cy="100" r="2" fill="#ec4899" opacity="0.4"/>
+  <circle cx="150" cy="105" r="2" fill="#f472b6" opacity="0.4"/>
+</svg>
+
