@@ -48,10 +48,6 @@ document.querySelectorAll('.fade-in').forEach(el => {
 
 const contactForm = document.getElementById('contactForm');
 
-// ================================
-// Formulário de Contato
-// ================================
-
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -60,48 +56,38 @@ contactForm.addEventListener('submit', function(e) {
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
 
-    const formData = new FormData(this);
-    const data = {
-        name: formData.get('name').trim(),
-        email: formData.get('email').trim(),
-        subject: formData.get('subject').trim(),
-        message: formData.get('message').trim()
-    };
-
-    // Validação básica
-    if (!data.name || !data.email || !data.subject || !data.message) {
-        alert('Por favor, preencha todos os campos obrigatórios.');
+    // Pega o endpoint do Formspree do atributo action
+    const formspreeURL = this.getAttribute('action');
+    
+    fetch(formspreeURL, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('✅ Mensagem enviada com sucesso!\n\nEntrarei em contato em breve.');
+            this.reset();
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    alert('❌ Erro: ' + data.errors.map(error => error.message).join(", "));
+                } else {
+                    alert('❌ Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+                }
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('❌ Erro ao enviar mensagem. Por favor, tente novamente ou use o WhatsApp.');
+    })
+    .finally(() => {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-        return;
-    }
-
-    // Validação de e-mail
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        alert('Por favor, insira um e-mail válido.');
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        return;
-    }
-
-    // OPÇÃO 1: Usar Formspree (gratuito, até 50 envios/mês)
-    // Acesse https://formspree.io e crie uma conta gratuita
-    // Eles fornecerão um endpoint único. Por enquanto, usando fallback.
-    
-    // OPÇÃO 2: Enviar via mailto: (abre cliente de e-mail)
-    const mailtoLink = `mailto:amanalises.consultoria@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Nome: ${data.name}\nE-mail: ${data.email}\n\nMensagem:\n${data.message}`)}`;
-    
-    // Tenta abrir o cliente de e-mail
-    window.location.href = mailtoLink;
-    
-    // Mostra mensagem de sucesso
-    setTimeout(() => {
-        alert('✅ Seu cliente de e-mail foi aberto!\n\nSe não abriu automaticamente, envie um e-mail para:\namanalises.consultoria@gmail.com\n\nOu use o WhatsApp flutuante no canto inferior direito.');
-        this.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 1000);
+    });
 });
 
 // ================================
