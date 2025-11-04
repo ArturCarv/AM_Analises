@@ -147,7 +147,7 @@
 
         .preview-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
@@ -168,6 +168,10 @@
 
         .preview-dark {
             background: #1e293b;
+        }
+
+        .preview-blue {
+            background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
         }
 
         .preview-label {
@@ -240,6 +244,82 @@
     <div class="container">
         <h1>🎨 Escolha sua Logo</h1>
         <p class="subtitle">Clique na logo para selecionar e ver a prévia em diferentes fundos</p>
+
+        <h2 style="text-align: center; color: #1e293b; margin: 30px 0 20px 0; font-size: 28px;">🎯 Logos com Alto Contraste para Fundo Azul</h2>
+        <p style="text-align: center; color: #64748b; margin-bottom: 30px;">Especialmente criadas para se destacar no navbar azul do seu site</p>
+
+        <div class="logos-grid">
+            <!-- Logo Branca -->
+            <div class="logo-card" onclick="selectLogo('logo-contraste-branco.svg', this)">
+                <div class="logo-title">⭐ Logo Branca (RECOMENDADA)</div>
+                <div class="logo-container" style="background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);">
+                    <img src="logo-contraste-branco.svg" alt="Logo Branca" style="width: 200px; height: 200px;">
+                </div>
+                <div class="logo-description">
+                    Logo branca com sombra para máximo contraste no fundo azul. Limpa e profissional.
+                </div>
+                <div class="features">
+                    <span class="feature-tag">Máximo Contraste</span>
+                    <span class="feature-tag">Profissional</span>
+                    <span class="feature-tag">Sombra Suave</span>
+                </div>
+                <button class="select-btn">Selecionar Esta</button>
+            </div>
+
+            <!-- Logo Laranja -->
+            <div class="logo-card" onclick="selectLogo('logo-contraste-laranja.svg', this)">
+                <div class="logo-title">Logo Laranja/Amarela</div>
+                <div class="logo-container" style="background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);">
+                    <img src="logo-contraste-laranja.svg" alt="Logo Laranja" style="width: 200px; height: 200px;">
+                </div>
+                <div class="logo-description">
+                    Cores complementares ao azul. Vibrante e chamativa. Ótimo contraste visual.
+                </div>
+                <div class="features">
+                    <span class="feature-tag">Complementar</span>
+                    <span class="feature-tag">Vibrante</span>
+                    <span class="feature-tag">Impactante</span>
+                </div>
+                <button class="select-btn">Selecionar Esta</button>
+            </div>
+
+            <!-- Logo Verde -->
+            <div class="logo-card" onclick="selectLogo('logo-contraste-verde.svg', this)">
+                <div class="logo-title">Logo Verde/Ciano</div>
+                <div class="logo-container" style="background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);">
+                    <img src="logo-contraste-verde.svg" alt="Logo Verde" style="width: 200px; height: 200px;">
+                </div>
+                <div class="logo-description">
+                    Tom verde-ciano fresco. Bom contraste e transmite crescimento e inovação.
+                </div>
+                <div class="features">
+                    <span class="feature-tag">Fresco</span>
+                    <span class="feature-tag">Crescimento</span>
+                    <span class="feature-tag">Moderno</span>
+                </div>
+                <button class="select-btn">Selecionar Esta</button>
+            </div>
+
+            <!-- Logo Rosa -->
+            <div class="logo-card" onclick="selectLogo('logo-contraste-rosa.svg', this)">
+                <div class="logo-title">Logo Rosa/Magenta</div>
+                <div class="logo-container" style="background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);">
+                    <img src="logo-contraste-rosa.svg" alt="Logo Rosa" style="width: 200px; height: 200px;">
+                </div>
+                <div class="logo-description">
+                    Gradiente rosa-amarelo. Destaque visual forte e moderno.
+                </div>
+                <div class="features">
+                    <span class="feature-tag">Ousada</span>
+                    <span class="feature-tag">Moderna</span>
+                    <span class="feature-tag">Destaque</span>
+                </div>
+                <button class="select-btn">Selecionar Esta</button>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; color: #1e293b; margin: 50px 0 20px 0; font-size: 24px;">📦 Logos Originais</h2>
+        <p style="text-align: center; color: #64748b; margin-bottom: 30px;">As versões anteriores (funcionam melhor em fundos claros)</p>
 
         <div class="logos-grid">
             <!-- Logo Nova (Combinação 3 + 4) -->
@@ -316,15 +396,19 @@
             <div class="preview-title">👁️ Prévia em Diferentes Fundos</div>
             <div class="preview-grid">
                 <div class="preview-item preview-white">
-                    <img id="previewWhite" src="logo-nova.svg" alt="Preview" style="width: 120px; height: 120px;">
+                    <img id="previewWhite" src="logo-contraste-branco.svg" alt="Preview" style="width: 120px; height: 120px;">
                     <div class="preview-label">FUNDO BRANCO</div>
                 </div>
                 <div class="preview-item preview-light">
-                    <img id="previewLight" src="logo-nova.svg" alt="Preview" style="width: 120px; height: 120px;">
+                    <img id="previewLight" src="logo-contraste-branco.svg" alt="Preview" style="width: 120px; height: 120px;">
                     <div class="preview-label">FUNDO CLARO</div>
                 </div>
+                <div class="preview-item preview-blue">
+                    <img id="previewBlue" src="logo-contraste-branco.svg" alt="Preview" style="width: 120px; height: 120px;">
+                    <div class="preview-label" style="color: white;">NAVBAR AZUL ⭐</div>
+                </div>
                 <div class="preview-item preview-dark">
-                    <img id="previewDark" src="logo-nova.svg" alt="Preview" style="width: 120px; height: 120px;">
+                    <img id="previewDark" src="logo-contraste-branco.svg" alt="Preview" style="width: 120px; height: 120px;">
                     <div class="preview-label">FUNDO ESCURO</div>
                 </div>
             </div>
@@ -357,6 +441,7 @@
             selectedLogoSrc = logoSrc;
             document.getElementById('previewWhite').src = logoSrc;
             document.getElementById('previewLight').src = logoSrc;
+            document.getElementById('previewBlue').src = logoSrc;
             document.getElementById('previewDark').src = logoSrc;
             document.getElementById('selectedLogo').src = logoSrc;
         }
@@ -383,7 +468,7 @@
                   'Ou posso fazer isso automaticamente para você?');
         }
 
-        // Seleciona a primeira logo por padrão
+        // Seleciona a logo branca por padrão (melhor para o site)
         window.onload = function() {
             document.querySelector('.logo-card').click();
         };

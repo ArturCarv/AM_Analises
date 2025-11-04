@@ -1,0 +1,45 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente laranja/amarelo (complementar ao azul) -->
+    <linearGradient id="gradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fb923c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowOrange">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#fef3c7;stop-opacity:0" />
+    </radialGradient>
+    
+    <filter id="shadowOrange">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Aura de fundo -->
+  <circle cx="100" cy="100" r="70" fill="url(#glowOrange)"/>
+  
+  <!-- Curvas -->
+  <path d="M 50 130 Q 70 50, 90 130" 
+        fill="none" stroke="url(#gradOrange)" stroke-width="5" stroke-linecap="round" filter="url(#shadowOrange)"/>
+  
+  <path d="M 90 130 Q 110 60, 130 130" 
+        fill="none" stroke="url(#gradOrange)" stroke-width="5" stroke-linecap="round" filter="url(#shadowOrange)"/>
+  
+  <path d="M 130 130 Q 150 65, 170 130" 
+        fill="none" stroke="url(#gradOrange)" stroke-width="5" stroke-linecap="round" filter="url(#shadowOrange)"/>
+  
+  <!-- Conexões -->
+  <line x1="70" y1="50" x2="110" y2="60" stroke="#fb923c" stroke-width="2.5" opacity="0.5"/>
+  <line x1="110" y1="60" x2="150" y2="65" stroke="#fbbf24" stroke-width="2.5" opacity="0.5"/>
+  
+  <!-- Nós -->
+  <circle cx="70" cy="50" r="8" fill="#f59e0b" stroke="white" stroke-width="2" filter="url(#shadowOrange)"/>
+  <circle cx="110" cy="60" r="9" fill="#fb923c" stroke="white" stroke-width="2" filter="url(#shadowOrange)"/>
+  <circle cx="150" cy="65" r="8" fill="#fbbf24" stroke="white" stroke-width="2" filter="url(#shadowOrange)"/>
+  
+  <!-- Base -->
+  <line x1="50" y1="130" x2="170" y2="130" stroke="#fed7aa" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+</svg>
+
