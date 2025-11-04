@@ -361,18 +361,18 @@
 
             <div id="formSection" class="form-section">
                 <h3>📧 Receba o E-book Gratuitamente</h3>
-                <form id="ebookForm">
+                <form id="ebookForm" action="https://formspree.io/f/mrbowwno" method="POST">
                     <div class="form-group">
                         <label for="name">Nome Completo:</label>
-                        <input type="text" id="name" required placeholder="Seu nome">
+                        <input type="text" id="name" name="name" required placeholder="Seu nome">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail:</label>
-                        <input type="email" id="email" required placeholder="seu@email.com">
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
                     </div>
                     <div class="form-group">
                         <label for="stage">Você está em qual fase?</label>
-                        <select id="stage" style="width: 100%; padding: 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px;">
+                        <select id="stage" name="stage" style="width: 100%; padding: 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px;">
                             <option value="">Selecione...</option>
                             <option value="graduacao">Graduação em Psicologia</option>
                             <option value="tcc">Fazendo TCC</option>
@@ -413,24 +413,48 @@
     <script>
         document.getElementById('ebookForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const stage = document.getElementById('stage').value;
 
-            // Aqui você pode integrar com um serviço de e-mail marketing (Mailchimp, SendGrid, etc.)
-            // Por enquanto, apenas capturamos os dados localmente
-            console.log('Dados capturados:', { name, email, stage });
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+
+            // Pega o endpoint do Formspree do atributo action
+            const formspreeURL = this.getAttribute('action');
             
-            // TODO: Integrar com serviço de e-mail marketing
-            // Exemplo: enviar para API do Mailchimp, SendGrid, etc.
-            
-            // Esconder formulário e mostrar mensagem de sucesso
-            document.getElementById('formSection').style.display = 'none';
-            document.getElementById('successMessage').classList.add('active');
-            
-            // Scroll suave para mensagem
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            fetch(formspreeURL, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Esconder formulário e mostrar mensagem de sucesso
+                    document.getElementById('formSection').style.display = 'none';
+                    document.getElementById('successMessage').classList.add('active');
+                    
+                    // Scroll suave para mensagem
+                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert('❌ Erro: ' + data.errors.map(error => error.message).join(", "));
+                        } else {
+                            alert('❌ Ocorreu um erro. Por favor, tente novamente ou entre em contato diretamente.');
+                        }
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('❌ Erro ao enviar. Por favor, tente novamente mais tarde.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
         });
     </script>
 </body>

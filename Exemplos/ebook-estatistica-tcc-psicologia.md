@@ -499,7 +499,7 @@ Se você precisa de **consultoria especializada** para seu TCC, mestrado ou dout
 
 ---
 
-**© 2024 AM Análises. Todos os direitos reservados.**
+**© 2025 AM Análises. Todos os direitos reservados.**
 
 *Este e-book pode ser compartilhado gratuitamente, desde que não seja modificado e que os créditos sejam mantidos.*
 
