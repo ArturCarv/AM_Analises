@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-Vestibulandos e Ideação Suicida</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .infographic {
+            background: white;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .header .subtitle {
+            font-size: 24px;
+            color: #f5576c;
+            font-weight: 600;
+        }
+        
+        .header .sample {
+            font-size: 18px;
+            color: #718096;
+            margin-top: 10px;
+        }
+        
+        .key-finding {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .key-finding h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .key-finding .stat {
+            font-size: 64px;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+        
+        .variables-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .variable-card {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 6px solid;
+        }
+        
+        .variable-card.risk { border-left-color: #e53e3e; }
+        .variable-card.protective { border-left-color: #48bb78; }
+        
+        .variable-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        
+        .variable-list {
+            list-style: none;
+        }
+        
+        .variable-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        
+        .variable-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: #f5576c;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #718096;
+            font-weight: 600;
+        }
+        
+        .methodology {
+            background: #fff5f5;
+            border-left: 4px solid #f5576c;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .methodology h3 {
+            color: #f5576c;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .methodology p {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .footer h3 {
+            font-size: 24px;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .footer p {
+            font-size: 16px;
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .infographic {
+                padding: 30px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .variables-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <div class="header">
+            <h1>Saúde Mental em Pré-Vestibulandos</h1>
+            <div class="subtitle">Fatores Associados à Ideação Suicida</div>
+            <div class="sample">Pesquisa quantitativa | Análise multivariada</div>
+        </div>
+        
+        <div class="key-finding">
+            <h2>Prevalência de Ideação Suicida</h2>
+            <div class="stat">34.5%</div>
+            <div style="font-size: 20px; opacity: 0.9;">dos estudantes pré-vestibular reportaram ideação suicida</div>
+        </div>
+        
+        <div class="methodology">
+            <h3>Metodologia</h3>
+            <p><strong>Análises Realizadas:</strong> Regressão Logística Multivariada, Correlação de Pearson, Teste t de Student, ANOVA, Análise Descritiva | <strong>Variáveis:</strong> 15 preditores sociodemográficos, acadêmicos e psicológicos</p>
+        </div>
+        
+        <div class="variables-grid">
+            <div class="variable-card risk">
+                <div class="variable-title">⚠️ Fatores de Risco Identificados</div>
+                <ul class="variable-list">
+                    <li><strong>Sintomas depressivos</strong> (OR = 4.2, p < 0.001)</li>
+                    <li><strong>Ansiedade elevada</strong> (OR = 3.1, p < 0.001)</li>
+                    <li><strong>Baixo suporte familiar</strong> (OR = 2.3, p < 0.01)</li>
+                    <li><strong>Pressão acadêmica</strong> (OR = 1.8, p < 0.05)</li>
+                    <li><strong>Isolamento social</strong> (OR = 1.7, p < 0.05)</li>
+                </ul>
+            </div>
+            
+            <div class="variable-card protective">
+                <div class="variable-title">✅ Fatores Protetivos</div>
+                <ul class="variable-list">
+                    <li><strong>Suporte familiar adequado</strong> (OR = 0.4, p < 0.001)</li>
+                    <li><strong>Rede de amigos</strong> (OR = 0.5, p < 0.01)</li>
+                    <li><strong>Atividade física regular</strong> (OR = 0.6, p < 0.05)</li>
+                    <li><strong>Hobbies e lazer</strong> (OR = 0.7, p < 0.05)</li>
+                    <li><strong>Autoestima positiva</strong> (OR = 0.5, p < 0.01)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value">R² = 0.62</div>
+                    <div class="stat-label">Variância Explicada (Regressão)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">p < 0.001</div>
+                    <div class="stat-label">Significância do Modelo</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">AUC = 0.85</div>
+                    <div class="stat-label">Acurácia Preditiva</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 20px; border-radius: 10px; margin-top: 30px;">
+            <h3 style="color: #f59e0b; font-size: 18px; margin-bottom: 10px;">💡 Implicações Práticas</h3>
+            <p style="color: #4a5568; font-size: 14px; line-height: 1.6;">
+                Os resultados indicam a necessidade de <strong>programas de intervenção</strong> focados no fortalecimento do suporte familiar e social, redução da pressão acadêmica e tratamento de sintomas depressivos e ansiosos em estudantes pré-vestibular.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <h3>AM Análises - Psicologia Clínica e Saúde Mental</h3>
+            <p>Análise estatística para pesquisas em saúde mental | Regressão logística | Fatores preditivos<br>
+            📧 artur.carvalhom2@gmail.com | 📱 +55 61 99861-9189</p>
+        </div>
+    </div>
+</body>
+</html>
+

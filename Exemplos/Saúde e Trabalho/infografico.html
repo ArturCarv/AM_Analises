@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde Mental e Trabalho</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .infographic {
+            background: white;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        
+        .header .subtitle {
+            font-size: 24px;
+            color: #00a8e8;
+            font-weight: 600;
+        }
+        
+        .header .sample {
+            font-size: 18px;
+            color: #718096;
+            margin-top: 10px;
+        }
+        
+        .overview-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .overview-section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .overview-stat {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .overview-stat-value {
+            font-size: 48px;
+            font-weight: 900;
+        }
+        
+        .overview-stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .dimension-card {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border-top: 6px solid;
+            text-align: center;
+        }
+        
+        .dimension-card.wellbeing { border-top-color: #48bb78; }
+        .dimension-card.stress { border-top-color: #e53e3e; }
+        .dimension-card.satisfaction { border-top-color: #4299e1; }
+        
+        .dimension-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .dimension-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .dimension-score {
+            font-size: 42px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+        
+        .dimension-card.wellbeing .dimension-score { color: #48bb78; }
+        .dimension-card.stress .dimension-score { color: #e53e3e; }
+        .dimension-card.satisfaction .dimension-score { color: #4299e1; }
+        
+        .dimension-label {
+            font-size: 13px;
+            color: #718096;
+        }
+        
+        .correlations {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .correlations h3 {
+            text-align: center;
+            font-size: 24px;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        
+        .correlation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .correlation-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .correlation-label {
+            font-size: 14px;
+            color: #4a5568;
+        }
+        
+        .correlation-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: #00a8e8;
+        }
+        
+        .methodology {
+            background: #e6f7ff;
+            border-left: 4px solid #00a8e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .methodology h3 {
+            color: #00a8e8;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .methodology p {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .footer h3 {
+            font-size: 24px;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .footer p {
+            font-size: 16px;
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .infographic {
+                padding: 30px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .dimensions-grid, .correlation-grid {
+                grid-template-columns: 1fr;
+            }
+            .overview-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <div class="header">
+            <h1>Saúde Mental no Ambiente de Trabalho</h1>
+            <div class="subtitle">Bem-estar, Estresse e Satisfação Profissional</div>
+            <div class="sample">Análise descritiva e correlacional | Psicologia Organizacional</div>
+        </div>
+        
+        <div class="overview-section">
+            <h2>Panorama Geral da Amostra</h2>
+            <div class="overview-stats">
+                <div class="overview-stat">
+                    <div class="overview-stat-value">247</div>
+                    <div class="overview-stat-label">Participantes</div>
+                </div>
+                <div class="overview-stat">
+                    <div class="overview-stat-value">12</div>
+                    <div class="overview-stat-label">Setores Analisados</div>
+                </div>
+                <div class="overview-stat">
+                    <div class="overview-stat-value">8</div>
+                    <div class="overview-stat-label">Dimensões Avaliadas</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="methodology">
+            <h3>Metodologia</h3>
+            <p><strong>Análises Realizadas:</strong> Estatística Descritiva (média, desvio-padrão, frequências), Correlação de Pearson, Teste t de Student, ANOVA one-way | <strong>Instrumentos:</strong> Escalas validadas de bem-estar no trabalho, estresse ocupacional e satisfação profissional</p>
+        </div>
+        
+        <div class="dimensions-grid">
+            <div class="dimension-card wellbeing">
+                <div class="dimension-icon">😊</div>
+                <div class="dimension-title">Bem-Estar Psicológico</div>
+                <div class="dimension-score">7.2</div>
+                <div class="dimension-label">em 10 pontos</div>
+                <div style="margin-top: 15px; font-size: 13px; color: #48bb78;">
+                    <strong>✓ Positivo</strong><br>
+                    Acima da média esperada
+                </div>
+            </div>
+            
+            <div class="dimension-card stress">
+                <div class="dimension-icon">😰</div>
+                <div class="dimension-title">Estresse Ocupacional</div>
+                <div class="dimension-score">5.8</div>
+                <div class="dimension-label">em 10 pontos</div>
+                <div style="margin-top: 15px; font-size: 13px; color: #e53e3e;">
+                    <strong>⚠ Moderado</strong><br>
+                    Requer atenção
+                </div>
+            </div>
+            
+            <div class="dimension-card satisfaction">
+                <div class="dimension-icon">💼</div>
+                <div class="dimension-title">Satisfação Profissional</div>
+                <div class="dimension-score">7.5</div>
+                <div class="dimension-label">em 10 pontos</div>
+                <div style="margin-top: 15px; font-size: 13px; color: #4299e1;">
+                    <strong>✓ Bom</strong><br>
+                    Maioria satisfeita
+                </div>
+            </div>
+        </div>
+        
+        <div class="correlations">
+            <h3>📊 Correlações Significativas Encontradas</h3>
+            <div class="correlation-grid">
+                <div class="correlation-item">
+                    <div class="correlation-label">Bem-estar ↔ Satisfação</div>
+                    <div class="correlation-value">r = 0.72***</div>
+                </div>
+                <div class="correlation-item">
+                    <div class="correlation-label">Estresse ↔ Bem-estar</div>
+                    <div class="correlation-value">r = -0.65***</div>
+                </div>
+                <div class="correlation-item">
+                    <div class="correlation-label">Estresse ↔ Satisfação</div>
+                    <div class="correlation-value">r = -0.58***</div>
+                </div>
+                <div class="correlation-item">
+                    <div class="correlation-label">Autonomia ↔ Satisfação</div>
+                    <div class="correlation-value">r = 0.54**</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 15px; font-size: 12px; color: #718096;">
+                *** p < 0.001 | ** p < 0.01 | * p < 0.05
+            </div>
+        </div>
+        
+        <div style="background: #f0fdf4; border-left: 4px solid #48bb78; padding: 20px; border-radius: 10px; margin-top: 30px;">
+            <h3 style="color: #48bb78; font-size: 18px; margin-bottom: 10px;">💡 Principais Achados</h3>
+            <ul style="color: #4a5568; font-size: 14px; line-height: 1.8; padding-left: 20px;">
+                <li>Forte correlação positiva entre bem-estar e satisfação profissional</li>
+                <li>Estresse ocupacional inversamente relacionado ao bem-estar psicológico</li>
+                <li>Setores com maior autonomia apresentam maior satisfação</li>
+                <li>Diferenças significativas entre áreas (ANOVA: F = 12.3, p < 0.001)</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <h3>AM Análises - Psicologia Organizacional</h3>
+            <p>Análise de dados organizacionais | Pesquisas de clima | Bem-estar no trabalho<br>
+            📧 artur.carvalhom2@gmail.com | 📱 +55 61 99861-9189</p>
+        </div>
+    </div>
+</body>
+</html>
+
