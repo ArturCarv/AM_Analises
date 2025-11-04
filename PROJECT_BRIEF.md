@@ -297,7 +297,7 @@ Oferecer consultoria especializada em análises estatísticas e psicométricas p
 
 ### Informações de Contato
 - **WhatsApp:** +55 61 99861-9189
-- **Email:** artur.carvalhom2@gmail.com
+- **Email:** amanalises.consultoria@gmail.com
 - **LinkedIn:** www.linkedin.com/in/arturcarvalhom
 - **GitHub:** https://github.com/ArturCarv/AM_Analises
 
