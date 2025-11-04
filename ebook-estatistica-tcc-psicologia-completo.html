@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatística Descomplicada para TCC de Psicologia - E-book Completo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Configurações para impressão */
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2d3748;
+            background: white;
+            font-size: 11pt;
+        }
+
+        /* Estilos para tela */
+        @media screen {
+            body {
+                background: #f7fafc;
+                padding: 20px;
+            }
+            
+            .container {
+                max-width: 210mm;
+                margin: 0 auto;
+                background: white;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+        }
+
+        /* Estilos para impressão */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            a {
+                color: #2d3748;
+                text-decoration: none;
+            }
+        }
+
+        /* Capa */
+        .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            page-break-after: always;
+        }
+
+        .cover-icon {
+            font-size: 120px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cover h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .cover .subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cover .author {
+            font-size: 20px;
+            margin-top: 60px;
+            opacity: 0.9;
+        }
+
+        /* Índice */
+        .toc {
+            padding: 40px;
+            page-break-after: always;
+        }
+
+        .toc h2 {
+            font-size: 32px;
+            color: #667eea;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .toc a {
+            color: #2d3748;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: #667eea;
+        }
+
+        /* Conteúdo */
+        .content {
+            padding: 40px;
+        }
+
+        .chapter {
+            margin-bottom: 40px;
+        }
+
+        .chapter h2 {
+            font-size: 32px;
+            color: #667eea;
+            margin: 40px 0 20px 0;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+            page-break-after: avoid;
+        }
+
+        .chapter h3 {
+            font-size: 24px;
+            color: #2d3748;
+            margin: 30px 0 15px 0;
+            page-break-after: avoid;
+        }
+
+        .chapter h4 {
+            font-size: 18px;
+            color: #4a5568;
+            margin: 20px 0 10px 0;
+            page-break-after: avoid;
+        }
+
+        .chapter p {
+            margin: 15px 0;
+            text-align: justify;
+        }
+
+        .chapter ul, .chapter ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .chapter li {
+            margin: 8px 0;
+        }
+
+        /* Caixas de destaque */
+        .highlight-box {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+            page-break-inside: avoid;
+        }
+
+        .highlight-box strong {
+            color: #667eea;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+            page-break-inside: avoid;
+        }
+
+        .warning-box strong {
+            color: #f59e0b;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+            page-break-inside: avoid;
+        }
+
+        .error-box {
+            background: #fef2f2;
+            border-left: 4px solid #e53e3e;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+            page-break-inside: avoid;
+        }
+
+        /* Código */
+        .code-block {
+            background: #2d3748;
+            color: #f7fafc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-x: auto;
+            page-break-inside: avoid;
+        }
+
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li:before {
+            content: "☐ ";
+            font-size: 18px;
+            color: #667eea;
+            margin-right: 8px;
+        }
+
+        /* Rodapé */
+        .footer {
+            margin-top: 60px;
+            padding: 30px 40px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-top: 3px solid #667eea;
+            text-align: center;
+            page-break-before: always;
+        }
+
+        .footer h3 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            color: #4a5568;
+        }
+
+        /* Ícones */
+        .icon {
+            color: #667eea;
+            margin-right: 8px;
+        }
+
+        /* Print button */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Strong emphasis */
+        strong {
+            color: #2d3748;
+            font-weight: 700;
+        }
+
+        /* Links */
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Emoji fix */
+        .emoji {
+            font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> Salvar como PDF
+    </button>
+
+    <div class="container">
+        <!-- CAPA -->
+        <div class="cover">
+            <div class="cover-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h1>Estatística Descomplicada<br>para TCC de Psicologia</h1>
+            <div class="subtitle">Um guia prático e acessível para estudantes e profissionais</div>
+            <div class="author">
+                <strong>AM Análises</strong><br>
+                Psicometria e Estatística para Psicologia<br>
+                2024
+            </div>
+        </div>
+
+        <!-- ÍNDICE -->
+        <div class="toc">
+            <h2><i class="fas fa-list"></i> Índice</h2>
+            <ul>
+                <li><a href="#introducao"><span>1. Introdução</span><span>03</span></a></li>
+                <li><a href="#conceitos-basicos"><span>2. Conceitos Básicos</span><span>05</span></a></li>
+                <li><a href="#tipos-variaveis"><span>3. Tipos de Variáveis</span><span>08</span></a></li>
+                <li><a href="#medidas-descritivas"><span>4. Medidas Descritivas</span><span>10</span></a></li>
+                <li><a href="#testes-estatisticos"><span>5. Testes Estatísticos Mais Usados</span><span>13</span></a></li>
+                <li><a href="#psicometria"><span>6. Psicometria Básica</span><span>19</span></a></li>
+                <li><a href="#reportar-resultados"><span>7. Como Reportar Resultados</span><span>24</span></a></li>
+                <li><a href="#erros-comuns"><span>8. Erros Comuns</span><span>27</span></a></li>
+                <li><a href="#checklist"><span>9. Checklist para Análise</span><span>30</span></a></li>
+                <li><a href="#recursos"><span>10. Recursos Adicionais</span><span>33</span></a></li>
+                <li><a href="#conclusao"><span>Conclusão</span><span>36</span></a></li>
+            </ul>
+        </div>
+
+        <!-- CONTEÚDO -->
+        <div class="content">
+            <!-- CAPÍTULO 1 -->
+            <div class="chapter page-break" id="introducao">
+                <h2><i class="icon fas fa-flag-checkered"></i> 1. Introdução</h2>
+                
+                <p>Se você é estudante de psicologia e sente um frio na barriga quando ouve a palavra "estatística", este e-book foi feito para você!</p>
+
+                <div class="highlight-box">
+                    <strong><i class="fas fa-question-circle"></i> Por que estatística é importante em Psicologia?</strong>
+                    <ul>
+                        <li><strong>✅ Validar instrumentos psicológicos</strong> (escalas, questionários)</li>
+                        <li><strong>✅ Testar hipóteses de pesquisa</strong></li>
+                        <li><strong>✅ Comparar grupos</strong> (tratamento vs controle, homens vs mulheres)</li>
+                        <li><strong>✅ Identificar relações entre variáveis</strong> (ansiedade e depressão, estresse e desempenho)</li>
+                        <li><strong>✅ Dar credibilidade científica</strong> às suas descobertas</li>
+                    </ul>
+                </div>
+
+                <h3>O que este e-book NÃO é:</h3>
+                <div class="error-box">
+                    <ul>
+                        <li><strong>❌</strong> Um manual técnico cheio de fórmulas matemáticas</li>
+                        <li><strong>❌</strong> Uma substituição para consultoria estatística especializada</li>
+                        <li><strong>❌</strong> Um curso completo de estatística</li>
+                    </ul>
+                </div>
+
+                <h3>O que este e-book É:</h3>
+                <div class="success-box">
+                    <ul>
+                        <li><strong>✅</strong> Um guia prático e acessível</li>
+                        <li><strong>✅</strong> Uma ponte entre você e a estatística</li>
+                        <li><strong>✅</strong> Uma ferramenta para te ajudar a tomar decisões informadas</li>
+                        <li><strong>✅</strong> Um material de apoio para conversar com seu orientador</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CAPÍTULO 2 -->
+            <div class="chapter page-break" id="conceitos-basicos">
+                <h2><i class="icon fas fa-book"></i> 2. Conceitos Básicos</h2>
+
+                <h3>O que é Estatística?</h3>
+                <p><strong>Estatística</strong> é a ciência que coleta, organiza, analisa e interpreta dados para tomar decisões informadas.</p>
+
+                <div class="highlight-box">
+                    <strong>Em psicologia, usamos estatística para:</strong>
+                    <ol>
+                        <li><strong>Descrever</strong> os dados (estatística descritiva)</li>
+                        <li><strong>Inferir</strong> conclusões sobre populações (estatística inferencial)</li>
+                        <li><strong>Testar</strong> hipóteses</li>
+                        <li><strong>Validar</strong> instrumentos</li>
+                    </ol>
+                </div>
+
+                <h3>População vs Amostra</h3>
+                <p><strong>População:</strong> Todos os indivíduos que queremos estudar</p>
+                <p class="code-block">Exemplo: Todos os estudantes universitários do Brasil</p>
+
+                <p><strong>Amostra:</strong> Um subconjunto da população que efetivamente estudamos</p>
+                <p class="code-block">Exemplo: 300 estudantes da USP, UFRJ e UFMG</p>
+
+                <div class="highlight-box">
+                    <strong>Por que usamos amostras?</strong>
+                    <ul>
+                        <li>É impossível/inviável estudar toda a população</li>
+                        <li>Amostras representativas nos permitem generalizar resultados</li>
+                    </ul>
+                </div>
+
+                <h3>Hipóteses</h3>
+                <p><strong>Hipótese Nula (H₀):</strong> Não há diferença/relação</p>
+                <p class="code-block">Exemplo: "Não há diferença na ansiedade entre homens e mulheres"</p>
+
+                <p><strong>Hipótese Alternativa (H₁):</strong> Há diferença/relação</p>
+                <p class="code-block">Exemplo: "Há diferença na ansiedade entre homens e mulheres"</p>
+
+                <h3>P-valor (valor-p)</h3>
+                <p>O <strong>p-valor</strong> é a probabilidade de obter os resultados observados (ou mais extremos) assumindo que a hipótese nula é verdadeira.</p>
+
+                <div class="highlight-box">
+                    <strong>Interpretação simplificada:</strong>
+                    <ul>
+                        <li><strong>p &lt; 0.05:</strong> Resultado estatisticamente significativo (rejeitamos H₀)</li>
+                        <li><strong>p ≥ 0.05:</strong> Resultado não significativo (não rejeitamos H₀)</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ IMPORTANTE:</strong>
+                    <ul>
+                        <li>p &lt; 0.05 é uma CONVENÇÃO, não uma lei da natureza</li>
+                        <li>Significância estatística ≠ Significância clínica/prática</li>
+                        <li>Um p = 0.049 não é "muito mais significativo" que p = 0.051</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CAPÍTULO 3 -->
+            <div class="chapter page-break" id="tipos-variaveis">
+                <h2><i class="icon fas fa-database"></i> 3. Tipos de Variáveis</h2>
+
+                <h3>1. Variáveis Qualitativas (Categóricas)</h3>
+                
+                <p><strong>Nominais:</strong> Categorias sem ordem</p>
+                <p class="code-block">Exemplos: Sexo (masculino/feminino), Estado civil (solteiro/casado/divorciado)</p>
+
+                <p><strong>Ordinais:</strong> Categorias com ordem</p>
+                <p class="code-block">Exemplos: Escolaridade (fundamental/médio/superior), Classe social (baixa/média/alta)</p>
+
+                <h3>2. Variáveis Quantitativas (Numéricas)</h3>
+                
+                <p><strong>Discretas:</strong> Valores inteiros (contáveis)</p>
+                <p class="code-block">Exemplos: Número de filhos, Número de sessões de terapia</p>
+
+                <p><strong>Contínuas:</strong> Valores decimais (mensuráveis)</p>
+                <p class="code-block">Exemplos: Idade, Escore em escala de ansiedade, Tempo de reação</p>
+            </div>
+
+            <!-- CAPÍTULO 4 -->
+            <div class="chapter page-break" id="medidas-descritivas">
+                <h2><i class="icon fas fa-chart-bar"></i> 4. Medidas Descritivas</h2>
+
+                <h3>Medidas de Tendência Central</h3>
+
+                <h4>Média (x̄)</h4>
+                <p>Soma de todos os valores ÷ quantidade de valores</p>
+                <div class="code-block">Exemplo: Idades = 20, 22, 25, 30, 33
+Média = (20 + 22 + 25 + 30 + 33) / 5 = 26 anos</div>
+
+                <h4>Mediana</h4>
+                <p>Valor central quando os dados estão ordenados</p>
+                <div class="code-block">Exemplo: Idades ordenadas = 20, 22, 25, 30, 33
+Mediana = 25 anos</div>
+
+                <h4>Moda</h4>
+                <p>Valor mais frequente</p>
+                <div class="code-block">Exemplo: Idades = 20, 22, 22, 25, 22, 30
+Moda = 22 anos (aparece 3 vezes)</div>
+
+                <div class="highlight-box">
+                    <strong>Quando usar cada uma?</strong>
+                    <ul>
+                        <li><strong>Média:</strong> Dados simétricos sem outliers</li>
+                        <li><strong>Mediana:</strong> Dados assimétricos ou com outliers</li>
+                        <li><strong>Moda:</strong> Dados categóricos</li>
+                    </ul>
+                </div>
+
+                <h3>Medidas de Dispersão</h3>
+
+                <p><strong>Desvio Padrão (DP):</strong> Mede o quanto os dados variam em relação à média</p>
+                <ul>
+                    <li>DP baixo = dados agrupados perto da média</li>
+                    <li>DP alto = dados espalhados</li>
+                </ul>
+
+                <p><strong>Variância (σ²):</strong> Desvio padrão ao quadrado</p>
+                <p><strong>Amplitude:</strong> Diferença entre maior e menor valor</p>
+            </div>
+
+            <!-- CAPÍTULO 5 -->
+            <div class="chapter page-break" id="testes-estatisticos">
+                <h2><i class="icon fas fa-flask"></i> 5. Testes Estatísticos Mais Usados</h2>
+
+                <div class="highlight-box">
+                    <strong>Como escolher o teste certo?</strong>
+                    <p>Pergunte-se:</p>
+                    <ol>
+                        <li>Qual é meu objetivo? (comparar grupos, testar correlação, etc.)</li>
+                        <li>Quantas variáveis estou analisando?</li>
+                        <li>Que tipo de variáveis tenho? (categórica ou numérica)</li>
+                        <li>Meus dados seguem distribuição normal?</li>
+                    </ol>
+                </div>
+
+                <h3>1. Teste t de Student</h3>
+                
+                <p><strong>Quando usar:</strong></p>
+                <ul>
+                    <li>Comparar MÉDIAS de 2 grupos independentes</li>
+                    <li>Dados numéricos</li>
+                    <li>Distribuição aproximadamente normal</li>
+                </ul>
+
+                <p><strong>Exemplos em psicologia:</strong></p>
+                <ul>
+                    <li>Comparar ansiedade entre homens e mulheres</li>
+                    <li>Comparar depressão entre grupo tratamento e controle</li>
+                    <li>Comparar QI entre dois métodos de ensino</li>
+                </ul>
+
+                <div class="code-block">Como reportar:
+t(58) = 2.45, p = 0.017
+
+• t = valor do teste
+• 58 = graus de liberdade
+• p = valor-p</div>
+
+                <h3>2. ANOVA (Análise de Variância)</h3>
+                
+                <p><strong>Quando usar:</strong></p>
+                <ul>
+                    <li>Comparar MÉDIAS de 3+ grupos</li>
+                    <li>Dados numéricos</li>
+                    <li>Distribuição aproximadamente normal</li>
+                </ul>
+
+                <p><strong>Exemplos em psicologia:</strong></p>
+                <ul>
+                    <li>Comparar níveis de estresse entre solteiros, casados e divorciados</li>
+                    <li>Comparar desempenho cognitivo entre baixa/média/alta escolaridade</li>
+                </ul>
+
+                <div class="code-block">Como reportar:
+F(2, 87) = 5.23, p = 0.007</div>
+
+                <h3>3. Correlação de Pearson</h3>
+                
+                <p><strong>Quando usar:</strong></p>
+                <ul>
+                    <li>Medir RELAÇÃO LINEAR entre 2 variáveis numéricas</li>
+                    <li>Ambas variáveis contínuas</li>
+                    <li>Distribuição aproximadamente normal</li>
+                </ul>
+
+                <p><strong>Exemplos em psicologia:</strong></p>
+                <ul>
+                    <li>Relação entre ansiedade e depressão</li>
+                    <li>Relação entre estresse e desempenho</li>
+                    <li>Relação entre horas de sono e humor</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Interpretação do r:</strong>
+                    <ul>
+                        <li>r próximo de +1: correlação positiva forte</li>
+                        <li>r próximo de -1: correlação negativa forte</li>
+                        <li>r próximo de 0: correlação fraca ou inexistente</li>
+                    </ul>
+                </div>
+
+                <div class="code-block">Como reportar:
+r = 0.65, p < 0.001</div>
+
+                <h3>4. Qui-Quadrado (χ²)</h3>
+                
+                <p><strong>Quando usar:</strong></p>
+                <ul>
+                    <li>Testar ASSOCIAÇÃO entre 2 variáveis categóricas</li>
+                </ul>
+
+                <p><strong>Exemplos em psicologia:</strong></p>
+                <ul>
+                    <li>Associação entre sexo e presença de transtorno de ansiedade</li>
+                    <li>Associação entre escolaridade e uso de substâncias</li>
+                </ul>
+
+                <div class="code-block">Como reportar:
+χ²(2) = 8.45, p = 0.015</div>
+
+                <h3>5. Mann-Whitney U / Kruskal-Wallis</h3>
+                
+                <p><strong>Quando usar:</strong></p>
+                <ul>
+                    <li>Alternativas NÃO PARAMÉTRICAS ao teste t e ANOVA</li>
+                    <li>Quando dados NÃO seguem distribuição normal</li>
+                    <li>Dados ordinais</li>
+                </ul>
+
+                <p><strong>Exemplos em psicologia:</strong></p>
+                <ul>
+                    <li>Comparar satisfação (escala Likert) entre grupos</li>
+                    <li>Comparar classificações de gravidade de sintomas</li>
+                </ul>
+            </div>
+
+            <!-- CAPÍTULO 6 -->
+            <div class="chapter page-break" id="psicometria">
+                <h2><i class="icon fas fa-ruler"></i> 6. Psicometria Básica</h2>
+
+                <h3>O que é Psicometria?</h3>
+                <p><strong>Psicometria</strong> é a área que estuda a <strong>medição de características psicológicas</strong> (inteligência, personalidade, ansiedade, etc.) através de instrumentos (testes, escalas, questionários).</p>
+
+                <h3>Propriedades Psicométricas Essenciais</h3>
+
+                <h4>1. Confiabilidade (Fidedignidade)</h4>
+                <p><strong>Conceito:</strong> O instrumento mede de forma <strong>consistente</strong>?</p>
+
+                <div class="highlight-box">
+                    <strong>Tipos:</strong>
+                    <ul>
+                        <li><strong>Consistência Interna</strong> (Alfa de Cronbach): Os itens medem o mesmo construto?</li>
+                        <li><strong>Teste-reteste:</strong> Resultados são estáveis ao longo do tempo?</li>
+                        <li><strong>Formas Paralelas:</strong> Versões diferentes do teste dão resultados similares?</li>
+                    </ul>
+                </div>
+
+                <h4>Alfa de Cronbach (α)</h4>
+                <div class="code-block">α < 0.60  = Pobre
+0.60-0.69 = Questionável
+0.70-0.79 = Aceitável
+0.80-0.89 = Bom
+≥ 0.90    = Excelente</div>
+
+                <div class="code-block">Como reportar:
+A escala apresentou boa consistência interna (α = 0.85).</div>
+
+                <h4>2. Validade</h4>
+                <p><strong>Conceito:</strong> O instrumento mede <strong>o que pretende medir</strong>?</p>
+
+                <div class="highlight-box">
+                    <strong>Tipos:</strong>
+                    <ul>
+                        <li><strong>Validade de Conteúdo:</strong> Os itens representam bem o construto?</li>
+                        <li><strong>Validade de Critério:</strong> O instrumento correlaciona com um critério externo?</li>
+                        <li><strong>Validade de Construto:</strong> O instrumento se relaciona com outros construtos conforme teoria?
+                            <ul>
+                                <li>Validade convergente: Correlação com medidas similares</li>
+                                <li>Validade discriminante: Baixa correlação com medidas diferentes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <h3>Análise Fatorial Exploratória (AFE)</h3>
+                <p><strong>Objetivo:</strong> Identificar dimensões (fatores) subjacentes aos itens.</p>
+
+                <p><strong>Quando usar:</strong></p>
+                <ul>
+                    <li>Desenvolvimento/validação de instrumentos</li>
+                    <li>Verificar estrutura interna da escala</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Decisões importantes:</strong>
+                    <ul>
+                        <li><strong>KMO</strong> (Kaiser-Meyer-Olkin): ≥ 0.70 = adequado</li>
+                        <li><strong>Teste de Bartlett:</strong> p &lt; 0.05 = adequado</li>
+                        <li><strong>Número de fatores:</strong> Critério de Kaiser (autovalor > 1), Scree plot, Análise paralela</li>
+                    </ul>
+                </div>
+
+                <div class="code-block">Como reportar:
+A AFE revelou 3 fatores que explicaram 68% da variância total. 
+A adequação amostral foi satisfatória (KMO = 0.82; Bartlett χ² = 245.6, p < 0.001).</div>
+            </div>
+
+            <!-- CAPÍTULO 7 -->
+            <div class="chapter page-break" id="reportar-resultados">
+                <h2><i class="icon fas fa-file-alt"></i> 7. Como Reportar Resultados</h2>
+
+                <h3>Estrutura Básica</h3>
+
+                <h4>Descrição dos participantes:</h4>
+                <div class="code-block">A amostra foi composta por 120 participantes (75 mulheres, 45 homens), 
+com idade média de 28.5 anos (DP = 6.2, amplitude = 18-45 anos).</div>
+
+                <h4>Análises descritivas:</h4>
+                <div class="code-block">O grupo experimental apresentou média de ansiedade de 42.3 (DP = 8.5), 
+enquanto o grupo controle teve média de 38.1 (DP = 7.8).</div>
+
+                <h4>Testes de hipóteses:</h4>
+                <div class="code-block">O teste t revelou diferença significativa entre os grupos 
+[t(118) = 2.76, p = 0.007, d de Cohen = 0.51], 
+indicando que o grupo experimental apresentou maior ansiedade.</div>
+
+                <div class="highlight-box">
+                    <strong>Regras de Ouro</strong>
+                    <ol>
+                        <li><strong>Sempre reporte estatísticas descritivas</strong> (média, DP, n)</li>
+                        <li><strong>Inclua o teste estatístico</strong> completo (estatística, gl, p)</li>
+                        <li><strong>Reporte tamanho do efeito</strong> (d de Cohen, η², r)</li>
+                        <li><strong>Use 2-3 casas decimais</strong> para estatísticas</li>
+                        <li><strong>Não use "significante"</strong> - use "estatisticamente significativo"</li>
+                        <li><strong>Interprete os resultados</strong> no contexto da psicologia</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- CAPÍTULO 8 -->
+            <div class="chapter page-break" id="erros-comuns">
+                <h2><i class="icon fas fa-exclamation-triangle"></i> 8. Erros Comuns (e Como Evitá-los)</h2>
+
+                <h3>1. Confundir correlação com causalidade</h3>
+                <div class="error-box">
+                    <strong>❌ Errado:</strong> "A ansiedade causou a depressão"
+                </div>
+                <div class="success-box">
+                    <strong>✅ Correto:</strong> "Ansiedade e depressão apresentaram correlação positiva"
+                </div>
+
+                <h3>2. Usar teste paramétrico sem verificar pressupostos</h3>
+                <div class="error-box">
+                    <strong>❌ Errado:</strong> Aplicar teste t sem verificar normalidade
+                </div>
+                <div class="success-box">
+                    <strong>✅ Correto:</strong> Verificar normalidade (Shapiro-Wilk) e usar Mann-Whitney se necessário
+                </div>
+
+                <h3>3. Comparações múltiplas sem correção</h3>
+                <div class="error-box">
+                    <strong>❌ Errado:</strong> Fazer 10 testes t sem ajuste de p-valor
+                </div>
+                <div class="success-box">
+                    <strong>✅ Correto:</strong> Usar correção de Bonferroni ou ANOVA
+                </div>
+
+                <h3>4. Ignorar tamanho do efeito</h3>
+                <div class="error-box">
+                    <strong>❌ Errado:</strong> "p = 0.001, então o efeito é grande"
+                </div>
+                <div class="success-box">
+                    <strong>✅ Correto:</strong> Reportar e interpretar o tamanho do efeito (d, r, η²)
+                </div>
+
+                <h3>5. Generalizar sem representatividade</h3>
+                <div class="error-box">
+                    <strong>❌ Errado:</strong> "Todos os brasileiros..." (com amostra de 50 universitários de SP)
+                </div>
+                <div class="success-box">
+                    <strong>✅ Correto:</strong> "Entre universitários paulistas..."
+                </div>
+
+                <h3>6. Interpretar p = 0.052 como "quase significativo"</h3>
+                <div class="error-box">
+                    <strong>❌ Errado:</strong> "O resultado foi marginalmente significativo (p = 0.052)"
+                </div>
+                <div class="success-box">
+                    <strong>✅ Correto:</strong> "Não houve diferença estatisticamente significativa (p = 0.052)"
+                </div>
+            </div>
+
+            <!-- CAPÍTULO 9 -->
+            <div class="chapter page-break" id="checklist">
+                <h2><i class="icon fas fa-tasks"></i> 9. Checklist para Análise de Dados</h2>
+
+                <h3>Antes de coletar dados:</h3>
+                <ul class="checklist">
+                    <li>Definir hipóteses claramente</li>
+                    <li>Calcular tamanho amostral necessário</li>
+                    <li>Planejar análises estatísticas</li>
+                    <li>Verificar propriedades dos instrumentos</li>
+                </ul>
+
+                <h3>Após coleta:</h3>
+                <ul class="checklist">
+                    <li>Organizar dados em planilha (linhas = participantes, colunas = variáveis)</li>
+                    <li>Verificar dados faltantes (missing)</li>
+                    <li>Identificar outliers</li>
+                    <li>Codificar variáveis categóricas</li>
+                    <li>Inverter itens negativos (se aplicável)</li>
+                    <li>Calcular escores totais/médios</li>
+                </ul>
+
+                <h3>Análises descritivas:</h3>
+                <ul class="checklist">
+                    <li>Características da amostra (n, sexo, idade, etc.)</li>
+                    <li>Médias, desvios padrão, frequências</li>
+                    <li>Gráficos apropriados (histogramas, boxplots)</li>
+                    <li>Verificar normalidade dos dados</li>
+                </ul>
+
+                <h3>Análises inferenciais:</h3>
+                <ul class="checklist">
+                    <li>Escolher teste apropriado</li>
+                    <li>Verificar pressupostos do teste</li>
+                    <li>Reportar estatísticas completas</li>
+                    <li>Calcular tamanho do efeito</li>
+                    <li>Interpretar resultados no contexto teórico</li>
+                </ul>
+
+                <h3>Psicometria (se aplicável):</h3>
+                <ul class="checklist">
+                    <li>Calcular Alfa de Cronbach</li>
+                    <li>Análise fatorial (AFE ou AFC)</li>
+                    <li>Correlações item-total</li>
+                    <li>Validade convergente/discriminante</li>
+                </ul>
+            </div>
+
+            <!-- CAPÍTULO 10 -->
+            <div class="chapter page-break" id="recursos">
+                <h2><i class="icon fas fa-link"></i> 10. Recursos Adicionais</h2>
+
+                <h3>Softwares Gratuitos</h3>
+
+                <div class="highlight-box">
+                    <strong>1. JASP</strong> (https://jasp-stats.org/)
+                    <ul>
+                        <li>Interface amigável, ideal para iniciantes</li>
+                        <li>Output em formato APA</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>2. jamovi</strong> (https://www.jamovi.org/)
+                    <ul>
+                        <li>Similar ao JASP, baseado em R</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>3. R + RStudio</strong> (https://rstudio.com/)
+                    <ul>
+                        <li>Mais avançado, mas extremamente poderoso</li>
+                        <li>Pacotes úteis: psych, lavaan, GPArotation</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>4. Python</strong> (https://www.python.org/)
+                    <ul>
+                        <li>Pandas, Scipy, Statsmodels, Pingouin</li>
+                    </ul>
+                </div>
+
+                <h3>Cursos Online Gratuitos</h3>
+                <ul>
+                    <li>Coursera: "Statistics for Data Science"</li>
+                    <li>Khan Academy: "Statistics and Probability"</li>
+                    <li>YouTube: Canal "Estatística Aplicada" (PT-BR)</li>
+                </ul>
+
+                <h3>Livros Recomendados</h3>
+
+                <div class="highlight-box">
+                    <strong>1. Field, A. (2020).</strong> <em>Descobrindo a Estatística usando SPSS</em>
+                    <p>Linguagem acessível, muitos exemplos</p>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>2. Dancey, C. P., & Reidy, J. (2019).</strong> <em>Estatística sem Matemática para Psicologia</em>
+                    <p>Foco específico em psicologia</p>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>3. Pasquali, L. (2017).</strong> <em>Psicometria: Teoria dos Testes na Psicologia e na Educação</em>
+                    <p>Referência nacional em psicometria</p>
+                </div>
+
+                <h3>Sites Úteis</h3>
+                <ul>
+                    <li><strong>Laerd Statistics:</strong> https://statistics.laerd.com/</li>
+                    <li><strong>Statistics How To:</strong> https://www.statisticshowto.com/</li>
+                    <li><strong>Quick-R:</strong> https://www.statmethods.net/</li>
+                </ul>
+            </div>
+
+            <!-- CONCLUSÃO -->
+            <div class="chapter page-break" id="conclusao">
+                <h2><i class="icon fas fa-trophy"></i> Conclusão</h2>
+
+                <div class="success-box">
+                    <p style="font-size: 18px; text-align: center; margin: 20px 0;">
+                        <strong>🎉 Parabéns por chegar até aqui! 🎉</strong>
+                    </p>
+                </div>
+
+                <p>Esperamos que este e-book tenha desmistificado a estatística e mostrado que, com os conceitos certos e um pouco de prática, você é capaz de realizar análises de dados de qualidade no seu TCC.</p>
+
+                <div class="highlight-box">
+                    <strong>Lembre-se:</strong>
+                    <ul>
+                        <li><strong>Estatística é uma FERRAMENTA</strong>, não um fim em si mesma</li>
+                        <li>O importante é fazer <strong>CIÊNCIA DE QUALIDADE</strong></li>
+                        <li><strong>Não tenha medo de pedir ajuda</strong> quando necessário</li>
+                        <li>A <strong>prática leva à perfeição</strong></li>
+                    </ul>
+                </div>
+
+                <h3>Precisa de Ajuda?</h3>
+                <p>Se você precisa de <strong>consultoria especializada</strong> para seu TCC, mestrado ou doutorado, entre em contato conosco!</p>
+
+                <div class="highlight-box">
+                    <strong>Nossos serviços:</strong>
+                    <ul>
+                        <li>✅ Análise de dados para TCC/Dissertação/Tese</li>
+                        <li>✅ Validação de instrumentos psicológicos</li>
+                        <li>✅ Análise fatorial exploratória e confirmatória</li>
+                        <li>✅ Consultoria estatística personalizada</li>
+                        <li>✅ Interpretação de resultados</li>
+                    </ul>
+                </div>
+
+                <p style="text-align: center; font-size: 24px; margin: 40px 0; color: #667eea;">
+                    <strong>📚 Bons estudos e muito sucesso no seu TCC! 🎓✨</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- RODAPÉ -->
+        <div class="footer">
+            <h3><i class="fas fa-brain"></i> AM Análises</h3>
+            <p><strong>Psicometria e Estatística para Psicologia</strong></p>
+            <p>📧 E-mail: contato@am-analises.com.br</p>
+            <p>🌐 Site: https://am-analises.github.io</p>
+            <p style="margin-top: 30px; font-size: 12px; color: #718096;">
+                © 2024 AM Análises. Todos os direitos reservados.<br>
+                Este e-book pode ser compartilhado gratuitamente, desde que não seja modificado e que os créditos sejam mantidos.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Adicionar smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -395,9 +395,12 @@
                 <i class="fas fa-check-circle"></i>
                 <h3>E-book Enviado com Sucesso!</h3>
                 <p>Verifique sua caixa de entrada (e spam) para acessar o e-book.<br>Em breve você receberá conteúdos exclusivos sobre estatística para psicologia.</p>
-                <a href="#" id="downloadLink" class="download-btn" onclick="downloadEbook()">
-                    <i class="fas fa-download"></i> Download Direto (Clique Aqui)
+                <a href="ebook-estatistica-tcc-psicologia-completo.html" target="_blank" class="download-btn">
+                    <i class="fas fa-book-open"></i> Ler E-book Online
                 </a>
+                <p style="margin-top: 15px; font-size: 14px; color: #718096;">
+                    💡 <strong>Dica:</strong> No e-book online, clique em "Salvar como PDF" no canto superior direito para baixar
+                </p>
             </div>
 
             <div class="testimonial">
@@ -415,10 +418,12 @@
             const email = document.getElementById('email').value;
             const stage = document.getElementById('stage').value;
 
-            // Aqui você pode integrar com um serviço de e-mail marketing
-            // Por enquanto, vamos simular o envio
-            
+            // Aqui você pode integrar com um serviço de e-mail marketing (Mailchimp, SendGrid, etc.)
+            // Por enquanto, apenas capturamos os dados localmente
             console.log('Dados capturados:', { name, email, stage });
+            
+            // TODO: Integrar com serviço de e-mail marketing
+            // Exemplo: enviar para API do Mailchimp, SendGrid, etc.
             
             // Esconder formulário e mostrar mensagem de sucesso
             document.getElementById('formSection').style.display = 'none';
@@ -427,17 +432,6 @@
             // Scroll suave para mensagem
             document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
         });
-
-        function downloadEbook() {
-            // Aqui você pode gerar/servir o PDF do e-book
-            // Por enquanto, vamos mostrar um alerta
-            alert('📚 O download do e-book será iniciado em breve!\n\n' + 
-                  'Em produção, este link apontaria para o PDF real do e-book.\n\n' +
-                  'Obrigado pelo interesse!');
-            
-            // Em produção, você faria algo como:
-            // window.location.href = 'ebook-estatistica-tcc-psicologia.pdf';
-        }
     </script>
 </body>
 </html>
